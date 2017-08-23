@@ -1,12 +1,28 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h1>Hi {{currentUser.firstName}}!</h1>
-    <p>You're logged in with Angular 2 and Webpack!!</p>
-    <h3>All registered users:</h3>
+﻿<div class="openDrawer"  (click)="navigationDrawer()">
+    <span class="glyphicon glyphicon-menu-hamburger"></span>
+</div>
+
+<div class="overlay" [@showOverlay]="showOverlay"></div>
+
+<div class="page container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center span6 heading">Navigation drawer using angular 2 animation</h2>
+        </div>
+    </div>
+    <br/>
+    <div class="resource-provider">Find more cool stuff at <a href="http://www.codershood.info/">www.codershood.info</a></div>
+</div>
+
+<div class="navigation" [@navigation]="navigation">
+    <div class="close-nav" (click)="navigationDrawer()">
+        <span class="glyphicon glyphicon-menu-left"></span>
+    </div>
     <ul>
-        <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}})
-            - <a (click)="deleteUser(user.id)">Delete</a>
-        </li>
+        <li>Home</li>
+        <li>Posts</li>
+        <li>Ideas</li>
+        <li>Contacts</li>
+        <li>About</li>
     </ul>
-    <p><a [routerLink]="['/login']">Logout</a></p>
 </div>
