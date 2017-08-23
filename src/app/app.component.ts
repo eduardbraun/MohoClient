@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-
+import { AuthGuard } from './_guards/index';
 import '../assets/app.css';
 
 @Component({
@@ -8,4 +8,8 @@ import '../assets/app.css';
     templateUrl: 'app.component.html'
 })
 
-export class AppComponent { }
+export class AppComponent {
+    isLogedIn = false;
+
+
+}
