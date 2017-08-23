@@ -2,13 +2,17 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
+import {HttpHeaders} from "@angular/common/http";
 
 @Injectable()
 export class AuthenticationService {
     constructor(private http: Http) { }
 
-    login(username: string, password: string) {
-        return this.http.post('/api/authenticate', JSON.stringify({ username: username, password: password }))
+    login(email: string, password: string) {
+        var body = `email=${email}&password=${password}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        return this.http.post('http://localhost:12077/api/auth/token', body, {headers: headers})
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();
