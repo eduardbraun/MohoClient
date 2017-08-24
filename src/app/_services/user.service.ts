@@ -7,7 +7,7 @@ import { User } from '../_models/index';
 export class UserService {
     constructor(private http: Http) { }
     create(user: User) {
-        var body = `firstname=${user.firstName}&lastname=${user.lastName}&password=${user.password}&confirmpassword=${user.password}&email=${user.email}`;
+        var body = `firstname=${user.firstname}&lastname=${user.lastname}&password=${user.password}&confirmpassword=${user.password}&email=${user.email}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
