@@ -16,6 +16,9 @@
                 <li>
                     <a routerLink="/" *ngIf="authService.userLogedin">Browse</a>
                 </li>
+                <li>
+                    <a routerLink="listings" *ngIf="authService.userLogedin">Listings</a>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

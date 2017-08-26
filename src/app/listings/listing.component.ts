@@ -7,10 +7,10 @@ import {ListingService} from "../_services/listing.service";
 
 @Component({
     moduleId: module.id.toString(),
-    templateUrl: 'profile.component.html',
+    templateUrl: 'listing.component.html',
 })
 
-export class ProfileComponent implements OnInit {
+export class ListingComponent implements OnInit {
     constructor( private listingService: ListingService){
 
     }

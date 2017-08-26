@@ -1,0 +1,42 @@
+<div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-9">
+                    <h5 class="">All Listings</h5>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover " >
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Category</th>
+                    <th>Title</th>
+                    <th>Country</th>
+                    <th>Province</th>
+                    <th>City</th>
+                    <th>Description</th>
+                    <th>Contact</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let list of lists; let i = index">
+                    <td>{{i}}</td>
+                    <td>{{list.listingType}}</td>
+                    <td>{{list.listingTitle}}</td>
+                    <td>{{list.country}}</td>
+                    <td>{{list.province}}</td>
+                    <td>{{list.city}}</td>
+                    <td>{{list.listingDescription}}</td>
+                    <td>{{list.phoneNumber}}</td>
+                    <td> <button class="btn btn-info"> View </button></td>
+
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
