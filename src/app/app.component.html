@@ -14,10 +14,7 @@
                     <a routerLink="/" *ngIf="authService.userLogedin">Home</a>
                 </li>
                 <li>
-                    <a routerLink="/" *ngIf="authService.userLogedin">Browse</a>
-                </li>
-                <li>
-                    <a routerLink="listings" *ngIf="authService.userLogedin">Listings</a>
+                    <a routerLink="listings">Browse</a>
                 </li>
             </ul>
 
@@ -35,7 +32,7 @@
                     <a routerLink="register" *ngIf="!authService.userLogedin">Register</a>
                 </li>
                 <li *ngIf="authService.userLogedin">
-                    <a routerLink="/" class="">
+                    <a routerLink="profile" class="">
                         <span class="glyphicon glyphicon-user"></span> 
                         <strong>{{_user.firstname}} {{_user.lastname}}</strong>
                     </a>

@@ -24,6 +24,7 @@ import {
 } from "@angular/material";
 import {AddListingDialog} from "./profile/profile.component";
 import {ListingComponent} from "./listings/listing.component";
+import {BusyModule} from "angular2-busy";
 
 @NgModule({
     imports: [
@@ -36,6 +37,7 @@ import {ListingComponent} from "./listings/listing.component";
         MdDialogModule,
         MdOptionModule,
         MdSelectModule,
+        BusyModule,
         MdNativeDateModule,
         routing
     ],

@@ -5,6 +5,9 @@ import 'rxjs/add/observable/throw';
 import {HttpClient, HttpResponse, HttpHeaders} from "@angular/common/http";
 import {ListingService} from "../_services/listing.service";
 import {MdDialog, MdDialogRef} from "@angular/material";
+import {error} from "util";
+import {_finally} from "rxjs/operator/finally";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
     moduleId: module.id.toString(),
@@ -15,11 +18,15 @@ export class ProfileComponent implements OnInit {
     constructor( private listingService: ListingService, public dialog: MdDialog){
 
     }
+    busy: Subscription;
+    busy2: Subscription;
     results: any = {};
     errorMessage: string;
     lists : any;
     token: any = {};
-    ngOnInit() {  }
+    ngOnInit() {
+        this.getAllListingsForUser()
+    }
 
     openAddListingDialog() {
         let dialogRef = this.dialog.open(AddListingDialog,{
@@ -29,16 +36,25 @@ export class ProfileComponent implements OnInit {
             if(result){
                 this.results = result;
                 this.token = JSON.parse(localStorage.getItem('currentUser'));
-                this.listingService.createNewListing(result)
+                this.busy2 =  this.listingService.createNewListing(result)
                     .subscribe(
                         listings => this.lists = listings[''],
-                        error => this.errorMessage = error
+                        error => this.errorMessage = error,
+                        () => this.getAllListingsForUser()
                     )
             }else{
                 //user clicked canceled
             }
 
         });
+    }
+
+    getAllListingsForUser() {
+        this.busy = this.listingService.getListingsForUser()
+            .subscribe(
+                listings => this.lists = listings['listingsCollection'],
+                error => this.errorMessage = error
+            )
     }
 }
 
