@@ -3,19 +3,25 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-xs-9">
-                    <h5 class="">Your Listings</h5>
+                    <h5 class="">Listing Options</h5>
                 </div>
-                <div class="col-xs-2">
-                    <button class="btn btn-primary pull-right">Add Listing</button>
+
+            </div>
+        </div>
+        <div class="panel-body">
+                <button class="btn btn-primary" (click)="openAddListingDialog()">Add Listing</button>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-9">
+                    <h5 class="">Your Listings</h5>
                 </div>
             </div>
         </div>
         <div class="panel-body">
-            <ul>
-                <li *ngFor="let list of lists; let i = index">
-                    {{i}} {{list.ownerId}}
-                </li>
-            </ul>
+
         </div>
     </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MdButtonModule, MdDialog, MdDialogRef} from '@angular/material';
 import {Listing} from "../_models/listing";
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {HttpClient, HttpResponse, HttpHeaders} from "@angular/common/http";
@@ -9,9 +11,8 @@ import {ListingService} from "../_services/listing.service";
     moduleId: module.id.toString(),
     templateUrl: 'listing.component.html',
 })
-
 export class ListingComponent implements OnInit {
-    constructor( private listingService: ListingService){
+    constructor( private listingService: ListingService, public dialog: MdDialog){
 
     }
     results: any;
@@ -27,4 +28,7 @@ export class ListingComponent implements OnInit {
                 error => this.errorMessage = error
             )
     }
+
+
 }
+

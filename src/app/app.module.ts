@@ -17,6 +17,12 @@ import { RegisterComponent } from './register/index';
 import { UserComponent } from './user/index';
 import { ProfileComponent } from './profile/index';
 import {ListingService} from "./_services/listing.service";
+import {CdkTableModule} from "@angular/cdk";
+import {
+    MdButtonModule, MdDialog, MdDialogModule, MdInputContainer, MdInputModule,
+    MdNativeDateModule, MdOptionModule, MdSelectModule
+} from "@angular/material";
+import {AddListingDialog} from "./profile/profile.component";
 import {ListingComponent} from "./listings/listing.component";
 
 @NgModule({
@@ -25,6 +31,12 @@ import {ListingComponent} from "./listings/listing.component";
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
+        MdButtonModule,
+        MdInputModule,
+        MdDialogModule,
+        MdOptionModule,
+        MdSelectModule,
+        MdNativeDateModule,
         routing
     ],
     declarations: [
@@ -35,19 +47,22 @@ import {ListingComponent} from "./listings/listing.component";
         RegisterComponent,
         UserComponent,
         ProfileComponent,
-        ListingComponent
+        ListingComponent,
+        AddListingDialog
     ],
     providers: [
         AuthGuard,
         AlertService,
         AuthenticationService,
         ListingService,
+        MdDialog,
         UserService,
 
         // providers used to create fake backend
         BaseRequestOptions
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    entryComponents: [AddListingDialog]
 })
 
 export class AppModule { }

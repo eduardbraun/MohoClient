@@ -15,10 +15,7 @@ export class AppComponent implements OnInit{
     constructor(private authService : AuthGuard, private authenticationService: AuthenticationService,private router: Router,       private route: ActivatedRoute){}
     isLogedIn = false;
     returnUrl: string;
-    _user: User[] = [];
-    public firstname : string = "";
-    public lastname : string = "";
-
+    _user: any = {};
     isActive(){
         return this.authService.userLogedin;
     }
@@ -28,6 +25,6 @@ export class AppComponent implements OnInit{
         this.authenticationService.logout();
     }
     ngOnInit(){
-        this._user = this.authService._user;
+        this._user = JSON.parse(localStorage.getItem('currentUser'));
     }
 }

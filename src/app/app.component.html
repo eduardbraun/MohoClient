@@ -37,7 +37,7 @@
                 <li *ngIf="authService.userLogedin">
                     <a routerLink="/" class="">
                         <span class="glyphicon glyphicon-user"></span> 
-                        <strong></strong>
+                        <strong>{{_user.firstname}} {{_user.lastname}}</strong>
                     </a>
                 </li>
             </ul>

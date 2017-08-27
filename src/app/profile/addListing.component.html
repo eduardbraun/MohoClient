@@ -1,0 +1,59 @@
+<h2 md-dialog-title>Added New Listing</h2>
+<md-dialog-content>
+    <form name="form"  #f="ngForm" novalidate>
+        <div class="form-group">
+            <label >Catagory</label>
+            <md-select [(ngModel)]="newListing.ListingType" name="catagory">
+                <md-option *ngFor="let c of listingType" [value]="c.id">{{c.name}}</md-option>
+            </md-select>
+        </div>
+        <div class="form-group">
+            <label >Country</label>
+            <md-select [(ngModel)]="newListing.ListingCountry" name="country">
+            <md-option *ngFor="let c of countries" [value]="c.id">{{c.name}}</md-option>
+            </md-select>
+        </div>
+        <div class="form-group">
+            <label for="">Province</label>
+            <md-select [(ngModel)]="newListing.ListingProvince" name="province">
+                <md-option *ngFor="let c of province" [value]="c.id">{{c.name}}</md-option>
+            </md-select>
+        </div>
+        <div class="form-group">
+            <label for="">City</label>
+            <md-select [(ngModel)]="newListing.ListingCity" name="city">
+                <md-option *ngFor="let c of city" [value]="c.id">{{c.name}}</md-option>
+            </md-select>
+        </div>
+        <div class="form-group">
+            <label for="">Listing Title</label>
+            <input type="text" class="form-control" name="title" required [(ngModel)]="newListing.ListingTitle"/>
+        </div>
+        <div class="form-group">
+            <label for="">Listing Description</label>
+            <input type="text" class="form-control" name="description" required [(ngModel)]="newListing.ListingDescription" />
+        </div>
+        <div class="form-group">
+            <label for="">Address</label>
+            <input type="text" class="form-control" name="address" required [(ngModel)]="newListing.Address" />
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="newListing.Email" />
+        </div>
+        <div class="form-group">
+            <label for="">Fullname</label>
+            <input type="text" class="form-control" name="fullname" [(ngModel)]="newListing.FullName" />
+        </div>
+        <div class="form-group">
+            <label for="">Phone</label>
+            <input type="text" class="form-control" name="phone" [(ngModel)]="newListing.PhoneNumber"/>
+        </div>
+    </form>
+</md-dialog-content>
+
+<md-dialog-actions>
+    <button md-button md-dialog-close>Cancel</button>
+    <!-- Can optionally provide a result for the closing dialog. -->
+    <button md-button (click)="saveDialog()">Save</button>
+</md-dialog-actions>

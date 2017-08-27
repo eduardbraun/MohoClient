@@ -16,13 +16,20 @@ export class ListingService {
 
     constructor(private http: Http) { }
 
+    token: any = this.getToken();
+
     getAllListings (): Observable<Listing[]> {
         return this.http.get(this.getAllListingUrl).map(this.parseData).catch(this.handleError);
     }
 
+
     // This method parses the data to JSON
     private parseData(res: Response)  {
         return res.json() || [];
+    }
+
+    private getToken(){
+        return JSON.parse(localStorage.getItem('currentUser'));
     }
 
     // Displays the error message
