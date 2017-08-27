@@ -12,19 +12,21 @@ import { AuthGuard } from './_guards/index';
 })
 
 export class AppComponent implements OnInit{
-    constructor(private authService : AuthGuard, private authenticationService: AuthenticationService,private router: Router,       private route: ActivatedRoute){}
-    isLogedIn = false;
-    returnUrl: string;
-    _user: any = {};
-    isActive(){
-        return this.authService.userLogedin;
+    constructor(private authService : AuthGuard, private authenticationService: AuthenticationService,private router: Router,
+                private route: ActivatedRoute){
+        authenticationService.getUserInfo.subscribe(   userInfo => this.changeUserInfo(userInfo));
     }
+    _user: any = {};
 
     logout(){
-        window.location.reload()
+        window.location.reload();
         this.authenticationService.logout();
     }
     ngOnInit(){
         this._user = JSON.parse(localStorage.getItem('currentUser'));
+    }
+
+    private changeUserInfo(userInfo : any): void {
+        this._user = userInfo;
     }
 }

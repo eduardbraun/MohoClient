@@ -1,4 +1,4 @@
-export class Listing {
+export class AddListing {
     ListingType : number;
     ListingCountry : number;
     ListingProvince : number;

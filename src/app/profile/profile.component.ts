@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
     }
     results: any = {};
     errorMessage: string;
-    lists : Listing[];
+    lists : any;
     token: any = {};
     ngOnInit() {  }
 
@@ -29,6 +29,11 @@ export class ProfileComponent implements OnInit {
             if(result){
                 this.results = result;
                 this.token = JSON.parse(localStorage.getItem('currentUser'));
+                this.listingService.createNewListing(result)
+                    .subscribe(
+                        listings => this.lists = listings[''],
+                        error => this.errorMessage = error
+                    )
             }else{
                 //user clicked canceled
             }
