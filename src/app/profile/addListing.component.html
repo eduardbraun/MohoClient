@@ -3,7 +3,7 @@
     <form name="form"  #f="ngForm" novalidate>
         <div class="form-group">
             <label >Catagory</label>
-            <md-select [(ngModel)]="newListing.ListingType" name="catagory">
+            <md-select [(ngModel)]="newListing.ListingType" name="country">
                 <md-option *ngFor="let c of listingType" [value]="c.id">{{c.name}}</md-option>
             </md-select>
         </div>

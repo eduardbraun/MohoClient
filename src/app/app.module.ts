@@ -22,7 +22,7 @@ import {
     MdButtonModule, MdDialog, MdDialogModule, MdInputContainer, MdInputModule,
     MdNativeDateModule, MdOptionModule, MdSelectModule
 } from "@angular/material";
-import {AddListingDialog} from "./profile/profile.component";
+import {AddListingDialog, UpdateListingDialog} from "./profile/profile.component";
 import {ListingComponent} from "./listings/listing.component";
 import {BusyModule} from "angular2-busy";
 
@@ -50,7 +50,8 @@ import {BusyModule} from "angular2-busy";
         UserComponent,
         ProfileComponent,
         ListingComponent,
-        AddListingDialog
+        AddListingDialog,
+        UpdateListingDialog
     ],
     providers: [
         AuthGuard,
@@ -64,7 +65,10 @@ import {BusyModule} from "angular2-busy";
         BaseRequestOptions
     ],
     bootstrap: [AppComponent],
-    entryComponents: [AddListingDialog]
+    entryComponents: [
+        AddListingDialog,
+        UpdateListingDialog
+    ]
 })
 
 export class AppModule { }

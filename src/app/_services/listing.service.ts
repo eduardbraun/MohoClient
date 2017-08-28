@@ -17,13 +17,13 @@ export class ListingService {
     private getAllListingUrl = 'http://192.168.100.103:81/api/listing/getalllisting';
     private getAllListingForUserUrl = 'http://192.168.100.103:81/api/listing/getalllistingforuser';
     private createNewListingUrl = 'http://192.168.100.103:81/api/listing/newlisting';
+    private updateListingUrl = 'http://192.168.100.103:81/api/listing/updatelisting';
 
     constructor(private http: Http) { }
 
     getAllListings (): Observable<Listing[]> {
         return this.http.get(this.getAllListingUrl).map(this.parseData).catch(this.handleError);
     }
-
     getListingsForUser (): Observable<Listing[]> {
         let userInfo: any = this.getToken();
         let token = userInfo.token;
@@ -34,7 +34,6 @@ export class ListingService {
 
         return this.http.get(this.getAllListingForUserUrl, options).map(this.parseData).catch(this.handleError);
     }
-
     createNewListing (listing: AddListing): Observable<Listing[]> {
 
         let userInfo: any = this.getToken();
@@ -47,6 +46,18 @@ export class ListingService {
 
         return this.http.post(this.createNewListingUrl, listing, options).catch(this.handleError);
     }
+    updateListing (listing: any): Observable<Listing[]> {
+
+        let userInfo: any = this.getToken();
+        let token = userInfo.token;
+        let headers = new Headers();
+        headers.append("Authorization",'Bearer ' + token);
+        headers.append("Content-Type","application/json");
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.updateListingUrl, listing, options).catch(this.handleError);
+    }
+
 
 
     // This method parses the data to JSON
@@ -63,11 +74,6 @@ export class ListingService {
         let errorMessage: string;
 
         errorMessage = error.message ? error.message : error.toString();
-
-        // In real world application, call to log error to remote server
-        // logError(error);
-
-        // This returns another Observable for the observer to subscribe to
         return Observable.throw(errorMessage);
     }
 
