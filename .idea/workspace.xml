@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83288690-bb6d-49f9-a5c9-8f1c50ff5cf0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/_services/listing.service.ts" afterPath="$PROJECT_DIR$/src/app/_services/listing.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/profile/profile.component.ts" afterPath="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="profile.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,6 +136,7 @@
         <option value="$PROJECT_DIR$/src/app/_services/listing.service.ts" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -288,7 +298,7 @@
       <workItem from="1503518530665" duration="4811000" />
       <workItem from="1503531246641" duration="8640000" />
       <workItem from="1503637064991" duration="312000" />
-      <workItem from="1503637921205" duration="53030000" />
+      <workItem from="1503637921205" duration="53193000" />
     </task>
     <task id="LOCAL-00001" summary="added auth for the web api">
       <created>1503512797870</created>
@@ -346,11 +356,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503898802618</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added service to get filteroptions">
+      <created>1503983986511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1503983986511</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71933000" />
+    <option name="totallyTimeSpent" value="72096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -437,7 +454,8 @@
     <MESSAGE value="added emit service to auth to listin to new user info &#10;http post to at new listing is working" />
     <MESSAGE value="added bussy indicator" />
     <MESSAGE value="can now update listing" />
-    <option name="LAST_COMMIT_MESSAGE" value="can now update listing" />
+    <MESSAGE value="added service to get filteroptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added service to get filteroptions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -494,13 +512,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/_models/user.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/home/home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -683,17 +694,17 @@
         <state relative-caret-position="-2640">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1503983914892" expanded="true" signature="52756:52773" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="52756:52791" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="52756:52804" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="52756:52819" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="52854:53209" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="52867:53194" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="52915:53180" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="52934:53165" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="52967:53145" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="53007:53111" ph="..." />
-            <marker date="1503983914892" expanded="true" signature="53028:53089" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53320:53337" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53320:53355" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53320:53368" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53320:53383" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53418:53773" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53431:53758" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53479:53744" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53498:53729" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53531:53709" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53571:53675" ph="..." />
+            <marker date="1503984082109" expanded="true" signature="53592:53653" ph="..." />
           </folding>
         </state>
       </provider>
@@ -914,6 +925,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
