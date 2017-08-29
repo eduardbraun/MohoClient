@@ -15,6 +15,7 @@ import {AddListing} from "../_models/addListingDto";
 @Injectable()
 export class ListingService {
     private getAllListingUrl = 'http://192.168.100.103:81/api/listing/getalllisting';
+    private getFilterOptionsUrl = 'http://192.168.100.103:81/api/listing/getfilteroptions';
     private getAllListingForUserUrl = 'http://192.168.100.103:81/api/listing/getalllistingforuser';
     private createNewListingUrl = 'http://192.168.100.103:81/api/listing/newlisting';
     private updateListingUrl = 'http://192.168.100.103:81/api/listing/updatelisting';
@@ -24,6 +25,10 @@ export class ListingService {
     getAllListings (): Observable<Listing[]> {
         return this.http.get(this.getAllListingUrl).map(this.parseData).catch(this.handleError);
     }
+    getFilterOptions (): Observable<any[]> {
+        return this.http.get(this.getFilterOptionsUrl).map(this.parseData).catch(this.handleError);
+    }
+
     getListingsForUser (): Observable<Listing[]> {
         let userInfo: any = this.getToken();
         let token = userInfo.token;
@@ -62,6 +67,7 @@ export class ListingService {
 
     // This method parses the data to JSON
     private parseData(res: Response)  {
+        // console.log('filter', JSON.stringify(res));
         return res.json() || [];
     }
 

@@ -25,15 +25,18 @@ export class ProfileComponent implements OnInit {
     errorMessage: string;
     lists: any;
     token: any = {};
+    filteroptions :any = {};
 
     ngOnInit() {
-        this.getAllListingsForUser()
+        this.getAllListingsForUser();
+        this.getFilterOptions();
     }
 
     openAddListingDialog() {
         let dialogRef = this.dialog.open(AddListingDialog, {
             width: '60%'
         });
+        dialogRef.componentInstance.filterOptions = this.filteroptions;
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
                 this.results = result;
@@ -57,7 +60,7 @@ export class ProfileComponent implements OnInit {
             let dialogRef = this.dialog.open(UpdateListingDialog, {
                 width: '60%'
             });
-
+            dialogRef.componentInstance.filterOptions = this.filteroptions;
             dialogRef.componentInstance.updatedListing = updateList;
             dialogRef.afterClosed().subscribe(result => {
                 if (result) {
@@ -83,6 +86,14 @@ export class ProfileComponent implements OnInit {
                 error => this.errorMessage = error
             )
     }
+
+    getFilterOptions() {
+        this.busy = this.listingService.getFilterOptions()
+            .subscribe(
+                filters => this.filteroptions = filters,
+                error => this.errorMessage = error
+            )
+    }
 }
 
 @Component({
@@ -92,7 +103,7 @@ export class ProfileComponent implements OnInit {
 export class AddListingDialog {
     constructor(public dialogRef: MdDialogRef<AddListingDialog>) {
     }
-
+    @Input() filterOptions: any = {};
     newListing: any = {};
 
     countries = [
@@ -138,7 +149,7 @@ export class AddListingDialog {
     templateUrl: '../profile/updateListing.component.html',
 })
 export class UpdateListingDialog implements OnInit {
-
+    @Input() filterOptions: any = {};
     @Input() updatedListing: any = {};
     listing: any;
 
@@ -176,7 +187,7 @@ export class UpdateListingDialog implements OnInit {
     city = ["Winkler", "Morden", "Altona", "Brandon", "Winnipeg", "Other"
     ];
 
-    listingType = [ "Cars and Trucks", "Home","Garden", "House work/renovation", "Other"
+    listingType = ["Cars and Trucks", "Home", "Garden", "House work/renovation", "Other"
     ];
 
 
