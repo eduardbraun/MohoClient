@@ -2,30 +2,6 @@
 <md-dialog-content>
     <form name="form"  #f="ngForm" novalidate>
         <div class="form-group">
-            <label >Catagory</label>
-            <md-select [(ngModel)]="listing.ListingType"  name="ListingType">
-                <md-option *ngFor="let c of listingType" [value]="c">{{c}}</md-option>
-            </md-select>
-        </div>
-        <div class="form-group">
-            <label >Country</label>
-            <md-select [(ngModel)]="listing.ListingCountry" name="ListingCountry">
-                <md-option *ngFor="let c of countries" [value]="c">{{c}}</md-option>
-            </md-select>
-        </div>
-        <div class="form-group">
-            <label for="">Province</label>
-            <md-select [(ngModel)]="listing.ListingProvince" name="ListingProvince">
-                <md-option *ngFor="let c of province" [value]="c">{{c}}</md-option>
-            </md-select>
-        </div>
-        <div class="form-group">
-            <label for="">City</label>
-            <md-select [(ngModel)]="listing.ListingCity" name="ListingCity">
-                <md-option *ngFor="let c of city" [value]="c">{{c}}</md-option>
-            </md-select>
-        </div>
-        <div class="form-group">
             <label for="">Listing Title</label>
             <input type="text" class="form-control" name="title" required [(ngModel)]="listing.ListingTitle"/>
         </div>

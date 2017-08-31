@@ -13,7 +13,7 @@ export class AuthenticationService {
         var body = `email=${email}&password=${password}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        return this.http.post('http://192.168.100.103:81/api/auth/token', body, {headers: headers})
+        return this.http.post('http://192.168.100.101:81/api/auth/token', body, {headers: headers})
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();

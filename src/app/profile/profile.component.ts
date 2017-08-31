@@ -8,6 +8,8 @@ import {MdDialog, MdDialogRef} from "@angular/material";
 import {error} from "util";
 import {_finally} from "rxjs/operator/finally";
 import {Subscription} from "rxjs/Subscription";
+import {forEach} from "@angular/router/src/utils/collection";
+import {AlertService} from "../_services/alert.service";
 
 @Component({
     moduleId: module.id.toString(),
@@ -15,7 +17,7 @@ import {Subscription} from "rxjs/Subscription";
 })
 
 export class ProfileComponent implements OnInit {
-    constructor(private listingService: ListingService, public dialog: MdDialog) {
+    constructor(private listingService: ListingService, public dialog: MdDialog,  private alertService: AlertService) {
 
     }
 
@@ -40,12 +42,18 @@ export class ProfileComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
                 this.results = result;
+                console.log('result for adding is:', result);
                 this.token = JSON.parse(localStorage.getItem('currentUser'));
                 this.busy2 = this.listingService.createNewListing(result)
                     .subscribe(
                         listings => this.lists = listings[''],
-                        error => this.errorMessage = error,
-                        () => this.getAllListingsForUser()
+                        error =>{
+                            this.alertService.error(error);
+                        },
+                        () =>{
+                            this.getAllListingsForUser();
+                            this.alertService.success("Successfully added new Listing!");
+                        }
                     )
             } else {
                 //user clicked canceled
@@ -68,8 +76,13 @@ export class ProfileComponent implements OnInit {
                     this.busy = this.listingService.updateListing(result)
                         .subscribe(
                             listings => this.lists = listings[''],
-                            error => this.errorMessage = error,
-                            () => this.getAllListingsForUser()
+                            error =>{
+                                this.alertService.error(error);
+                            },
+                            () =>{
+                                this.getAllListingsForUser();
+                                this.alertService.success("Successfully updated Listing!");
+                            }
                         )
                 } else {
                     //user clicked canceled
@@ -91,7 +104,9 @@ export class ProfileComponent implements OnInit {
         this.busy = this.listingService.getFilterOptions()
             .subscribe(
                 filters => this.filteroptions = filters,
-                error => this.errorMessage = error
+                error => {
+                    this.alertService.error(error);
+                }
             )
     }
 }
@@ -100,47 +115,81 @@ export class ProfileComponent implements OnInit {
     selector: 'addListing.component',
     templateUrl: '../profile/addListing.component.html',
 })
-export class AddListingDialog {
+export class AddListingDialog implements OnInit{
+
     constructor(public dialogRef: MdDialogRef<AddListingDialog>) {
     }
+
+    ListingViewModel = function (listing: any) {
+        this.listingFilterName = listing.listingFilterName;
+        this.listingType = listing.listingType;
+    };
     @Input() filterOptions: any = {};
     newListing: any = {};
+    provinceSelectionEnabled: boolean = false;
+    citySelectionEnabled: boolean = false;
+    listings : any = {};
+    countries : any = {};
+    provinces: any = {};
+    cities: any = {};
+    selectedListing: any;
+    SelectedListingViewModel : any;
+    selectedCountry: any = {};
+    SelectedCountryViewModel: any = {};
+    selectedProvince: any = {};
+    SelectedProvinceViewModel: any = {};
+    selectedCity : any ={};
+    SelectedCityViewModel: any = {};
 
-    countries = [
-        {id: 1, name: "United States"},
-        {id: 2, name: "Australia"},
-        {id: 3, name: "Canada"},
-        {id: 4, name: "Brazil"},
-        {id: 5, name: "England"}
-    ];
-
-    province = [
-        {id: 1, name: "Manitoba"},
-        {id: 2, name: "Saskatchewan"},
-        {id: 3, name: "Alberta"},
-        {id: 4, name: "British Culumbian"},
-        {id: 5, name: "Other"}
-    ];
-
-    city = [
-        {id: 1, name: "Winkler"},
-        {id: 2, name: "Morden"},
-        {id: 3, name: "Altona"},
-        {id: 4, name: "Brandon"},
-        {id: 5, name: "Winnipeg"}
-    ];
-
-    listingType = [
-        {id: 1, name: "Car"},
-        {id: 2, name: "Home"},
-        {id: 3, name: "Garden"},
-        {id: 4, name: "Renovation"},
-        {id: 5, name: "Other"}
-    ];
+    ngOnInit(): void {
+        console.log('filteroptions is:', JSON.stringify(this.filterOptions));
+        this.countries = this.filterOptions.countryList;
+        this.listings = this.filterOptions.listingTypes;
+    }
 
 
     saveDialog() {
+        this.newListing.ListingType = this.SelectedListingViewModel.listingType;
+        this.newListing.ListingCountry = this.SelectedCountryViewModel.countryType;
+        this.newListing.ListingProvince = this.SelectedCountryViewModel.provinceName;
+        this.newListing.ListingCity = this.SelectedCountryViewModel.cityName;
         this.dialogRef.close(this.newListing);
+    }
+
+    countryOptionsChanged(){
+        let as = JSON.parse(this.selectedCountry);
+        this.SelectedCountryViewModel = as;
+        console.log('country is:', this.SelectedCountryViewModel);
+
+        if(this.SelectedCountryViewModel != null){
+            this.provinceSelectionEnabled = true;
+            this.citySelectionEnabled = false;
+            this.cities = {};
+            this.provinces = this.SelectedCountryViewModel.provinces;
+            console.log('provinces is:', this.provinces);
+        }
+    }
+    provinceOptionsChanged(){
+        let as = JSON.parse(this.selectedProvince);
+        this.SelectedProvinceViewModel = as;
+        console.log('province is:', this.SelectedProvinceViewModel);
+
+        if(this.SelectedProvinceViewModel != null){
+            this.citySelectionEnabled = true;
+            this.cities = this.SelectedProvinceViewModel.cities;
+            console.log('citites is:', this.cities);
+
+        }
+    }
+    cityOptionsChanged(){
+        let as = JSON.parse(this.selectedCity);
+        this.SelectedCityViewModel = as;
+        console.log('city is:', this.SelectedProvinceViewModel);
+    }
+    catagoryOptionsChanged(){
+        let as = JSON.parse(this.selectedListing);
+        this.SelectedListingViewModel = as;
+        console.log('filteroptions is:', this.SelectedListingViewModel);
     }
 }
 
@@ -171,25 +220,53 @@ export class UpdateListingDialog implements OnInit {
         this.FullName = listing.fullName;
 
     };
+    SelectedListing : any = {};
+    SelectedCountry : any = {};
+    SelectedProvince : any = {};
+    SelectedCity : any = {};
+
+    listings : any = {};
+    countries : any = {};
+    provinces: any = {};
+    cities: any = {};
 
     ngOnInit(): void {
         this.listing = new this.UpdateListingViewModel(this.updatedListing);
+        this.countries = this.filterOptions.countryList;
+        this.listings = this.filterOptions.listingTypes;
+        // for(var i = 0;i<this.listings.length;i++) {
+        //    var listing = this.listings[i];
+        //    if(listing.listingFilterName == this.listing.ListingType){
+        //        this.SelectedListing = listing;
+        //    }
+        // }
+        // for(var i = 0;i<this.countries.length;i++) {
+        //     var country = this.countries[i];
+        //     if(country.countryName == this.listing.ListingCountry){
+        //         this.SelectedCountry = country;
+        //         this.provinces = country.provinces;
+        //         for(var j = 0;j< country.provinces.length;j++) {
+        //             var province = country.provinces[j];
+        //             if(province.provinceName == this.listing.ListingProvince){
+        //                 this.SelectedProvince = province;
+        //                 this.cities = province.cities;
+        //                 for(var k = 0;k < province.cities.length;k++) {
+        //                     var city = province.cities[k];
+        //                     if(city.cityName == this.listing.ListingCity){
+        //                         this.SelectedCity = city;
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
         console.log('userId is:', JSON.stringify(this.listing));
+        console.log('this.updatedListing is:', JSON.stringify(this.updatedListing));
+        // console.log('listings is:',this.listings );
+        // console.log('countries is:',this.countries );
+        // console.log('provinces is:', this.provinces);
+        // console.log('citites is:', this.cities);
     }
-
-    countries = [
-        "United States", "Australia", "Canada", "Brazil", "England", "Other"
-    ];
-
-    province = ["Manitoba", "Saskatchewan", "Alberta", "British Culumbian", "Other"
-    ];
-
-    city = ["Winkler", "Morden", "Altona", "Brandon", "Winnipeg", "Other"
-    ];
-
-    listingType = ["Cars and Trucks", "Home", "Garden", "House work/renovation", "Other"
-    ];
-
 
     saveDialog() {
         this.dialogRef.close(this.listing);

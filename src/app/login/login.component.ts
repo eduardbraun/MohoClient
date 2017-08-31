@@ -33,8 +33,9 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     // window.location.reload();
+                    this.alertService.success("Successfully Logged in!")
                     this.router.navigate([this.returnUrl]);
-                },
+                    },
                 error => {
                     this.alertService.error(error._body);
                     this.loading = false;

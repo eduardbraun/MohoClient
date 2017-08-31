@@ -14,11 +14,12 @@ import {AddListing} from "../_models/addListingDto";
 // import {HttpClient, HttpResponse, HttpHeaders} from "@angular/common/http";
 @Injectable()
 export class ListingService {
-    private getAllListingUrl = 'http://192.168.100.103:81/api/listing/getalllisting';
-    private getFilterOptionsUrl = 'http://192.168.100.103:81/api/listing/getfilteroptions';
-    private getAllListingForUserUrl = 'http://192.168.100.103:81/api/listing/getalllistingforuser';
-    private createNewListingUrl = 'http://192.168.100.103:81/api/listing/newlisting';
-    private updateListingUrl = 'http://192.168.100.103:81/api/listing/updatelisting';
+    private baseUrl = 'http://192.168.100.101:81/';
+    private getAllListingUrl = 'http://192.168.100.101:81/api/listing/getalllisting';
+    private getFilterOptionsUrl = 'http://192.168.100.101:81/api/listing/getfilteroptions';
+    private getAllListingForUserUrl = 'http://192.168.100.101:81/api/listing/getalllistingforuser';
+    private createNewListingUrl = 'http://192.168.100.101:81/api/listing/newlisting';
+    private updateListingUrl = 'http://192.168.100.101:81/api/listing/updatelisting';
 
     constructor(private http: Http) { }
 
