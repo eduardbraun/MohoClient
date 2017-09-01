@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83288690-bb6d-49f9-a5c9-8f1c50ff5cf0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/profile/disableListingDialog.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/filter/MyFilterPiple.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/_models/listing.ts" afterPath="$PROJECT_DIR$/src/app/_models/listing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/_services/authentication.service.ts" afterPath="$PROJECT_DIR$/src/app/_services/authentication.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/_services/listing.service.ts" afterPath="$PROJECT_DIR$/src/app/_services/listing.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/_services/user.service.ts" afterPath="$PROJECT_DIR$/src/app/_services/user.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/listings/listing.component.html" afterPath="$PROJECT_DIR$/src/app/listings/listing.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/listings/listing.component.ts" afterPath="$PROJECT_DIR$/src/app/listings/listing.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/profile/profile.component.html" afterPath="$PROJECT_DIR$/src/app/profile/profile.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/profile/profile.component.ts" afterPath="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,67 +22,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="profile.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
+      <file leaf-file-name="listing.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/listings/listing.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="108" column="31" lean-forward="true" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-                <element signature="n#!!block;n#openAddListingDialog#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#openDisableListingDialog#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#openUpdateListingDialog#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getAllListingsForUser#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getFilterOptions#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="e#6321#6419#0" expanded="false" />
-                <element signature="n#AddListingDialog#0" expanded="false" />
-                <element signature="e#9206#9310#0" expanded="false" />
-                <element signature="n#UpdateListingDialog#0" expanded="false" />
-                <element signature="e#12334#12442#0" expanded="false" />
-                <element signature="n#DisableListingDialog#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="78" column="27" lean-forward="false" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+            <state relative-caret-position="253">
+              <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.html">
+      <file leaf-file-name="listing.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/listings/listing.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+            <state relative-caret-position="358">
+              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listing.service.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/_services/listing.service.ts">
+      <file leaf-file-name="MyFilterPiple.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/filter/MyFilterPiple.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="52" column="63" lean-forward="true" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-                <element signature="e#209#252#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="disableListingDialog.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/profile/disableListingDialog.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="27" />
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -99,8 +57,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -122,7 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/register/register.component.html" />
         <option value="$PROJECT_DIR$/src/app/home/home.component.css" />
         <option value="$PROJECT_DIR$/src/app/home/home.component.ts" />
         <option value="$PROJECT_DIR$/src/app/user/user.component.html" />
@@ -163,16 +120,17 @@
         <option value="$PROJECT_DIR$/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/src/app/syles/app.css" />
         <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/app/listings/listing.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/listings/listing.component.html" />
         <option value="$PROJECT_DIR$/src/app/_models/listing.ts" />
         <option value="$PROJECT_DIR$/src/app/profile/disableListingDialog.component.html" />
         <option value="$PROJECT_DIR$/src/app/_services/authentication.service.ts" />
         <option value="$PROJECT_DIR$/src/app/_services/user.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.html" />
         <option value="$PROJECT_DIR$/src/app/_services/listing.service.ts" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/listings/listing.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/filter/MyFilterPiple.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/listings/listing.component.html" />
       </list>
     </option>
   </component>
@@ -227,13 +185,6 @@
               <item name="MohoClient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MohoClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MohoClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -314,7 +265,7 @@
       <workItem from="1503637064991" duration="312000" />
       <workItem from="1503637921205" duration="67390000" />
       <workItem from="1504148273260" duration="8058000" />
-      <workItem from="1504230241513" duration="4955000" />
+      <workItem from="1504230241513" duration="6294000" />
     </task>
     <task id="LOCAL-00001" summary="added auth for the web api">
       <created>1503512797870</created>
@@ -400,15 +351,21 @@
       <option name="project" value="LOCAL" />
       <updated>1504151854582</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added delete and enable/disable listing feature">
+      <created>1504236347303</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1504236347303</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99306000" />
+    <option name="totallyTimeSpent" value="100645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20208333" sideWeight="0.49441788" order="0" side_tool="false" content_ui="combo" />
@@ -416,7 +373,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40628386" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1796875" sideWeight="0.50558215" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5054348" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5054348" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -475,14 +432,15 @@
     <MESSAGE value="changed readme" />
     <MESSAGE value="removed license" />
     <MESSAGE value="updated allert service to include error info and success messages. Can now updated and add data using the filteroptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated allert service to include error info and success messages. Can now updated and add data using the filteroptions" />
+    <MESSAGE value="added delete and enable/disable listing feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="added delete and enable/disable listing feature" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/_services/listing.service.ts</url>
-          <line>78</line>
+          <line>77</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -492,27 +450,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/profile/profile.component.ts</url>
-          <line>158</line>
+          <line>156</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/profile/profile.component.ts</url>
-          <line>159</line>
+          <line>157</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/profile/profile.component.ts</url>
-          <line>253</line>
+          <line>251</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/profile/profile.component.ts</url>
-          <line>155</line>
+          <line>153</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/profile/profile.component.ts</url>
-          <line>178</line>
+          <line>176</line>
           <properties />
           <option name="timeStamp" value="58" />
         </line-breakpoint>
@@ -526,13 +484,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/user/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/register/register.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -613,6 +564,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2640">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -799,24 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/listings/listing.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/listings/listing.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/profile/addListing.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
@@ -857,14 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="78" column="27" lean-forward="false" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/profile/disableListingDialog.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -881,35 +807,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/_services/listing.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="108" column="31" lean-forward="true" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
+        <state relative-caret-position="385">
+          <caret line="94" column="32" lean-forward="true" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
-            <element signature="n#!!block;n#openAddListingDialog#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#openDisableListingDialog#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#openUpdateListingDialog#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getAllListingsForUser#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getFilterOptions#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="e#6321#6419#0" expanded="false" />
-            <element signature="n#AddListingDialog#0" expanded="false" />
-            <element signature="e#9206#9310#0" expanded="false" />
-            <element signature="n#UpdateListingDialog#0" expanded="false" />
-            <element signature="e#12334#12442#0" expanded="false" />
-            <element signature="n#DisableListingDialog#0" expanded="false" />
+            <element signature="n#!!block;n#getAllListings#0;n#ListingService#0" expanded="false" />
+            <element signature="n#!!block;n#getFilterOptions#0;n#ListingService#0" expanded="false" />
+            <element signature="n#!!block;n#disableListing#0;n#ListingService#0" expanded="false" />
+            <element signature="n#!!block;n#deleteListing#0;n#ListingService#0" expanded="false" />
+            <element signature="n#!!block;n#getListingsForUser#0;n#ListingService#0" expanded="false" />
+            <element signature="n#!!block;n#createNewListing#0;n#ListingService#0" expanded="false" />
+            <element signature="n#!!block;n#updateListing#0;n#ListingService#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/_services/listing.service.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!block;n#openAddListingDialog#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#openDisableListingDialog#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#openDeleteListingDialog#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#openUpdateListingDialog#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#getAllListingsForUser#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#getFilterOptions#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="e#6319#6417#0" expanded="false" />
+            <element signature="n#AddListingDialog#0" expanded="false" />
+            <element signature="e#9204#9308#0" expanded="false" />
+            <element signature="n#UpdateListingDialog#0" expanded="false" />
+            <element signature="e#12332#12440#0" expanded="false" />
+            <element signature="n#DisableListingDialog#0" expanded="false" />
+            <element signature="e#13360#13468#0" expanded="false" />
+            <element signature="n#DeleteListingDialog#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/filter/MyFilterPiple.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="52" column="63" lean-forward="true" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
-            <element signature="e#209#252#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/listings/listing.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/listings/listing.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

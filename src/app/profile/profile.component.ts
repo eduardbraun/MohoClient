@@ -15,12 +15,10 @@ import {AlertService} from "../_services/alert.service";
     moduleId: module.id.toString(),
     templateUrl: 'profile.component.html',
 })
-
 export class ProfileComponent implements OnInit {
     constructor(private listingService: ListingService, public dialog: MdDialog,  private alertService: AlertService) {
 
     }
-
     busy: Subscription;
     busy2: Subscription;
     results: any = {};

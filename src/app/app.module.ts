@@ -2,12 +2,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// used to create fake backend
 import {BaseRequestOptions, HttpModule} from '@angular/http';
-
 import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
-
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
@@ -26,7 +23,7 @@ import {
     AddListingDialog, DeleteListingDialog, DisableListingDialog,
     UpdateListingDialog
 } from "./profile/profile.component";
-import {ListingComponent, SearchPipe} from "./listings/listing.component";
+import {ListingComponent} from "./listings/listing.component";
 import {BusyModule} from "angular2-busy";
 
 @NgModule({
@@ -56,9 +53,7 @@ import {BusyModule} from "angular2-busy";
         AddListingDialog,
         UpdateListingDialog,
         DisableListingDialog,
-        DeleteListingDialog,
-        SearchPipe
-
+        DeleteListingDialog
     ],
     providers: [
         AuthGuard,
@@ -67,7 +62,6 @@ import {BusyModule} from "angular2-busy";
         ListingService,
         MdDialog,
         UserService,
-
         // providers used to create fake backend
         BaseRequestOptions
     ],
