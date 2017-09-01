@@ -25,6 +25,7 @@ import {
 } from "./profile/profile.component";
 import {ListingComponent} from "./listings/listing.component";
 import {BusyModule} from "angular2-busy";
+import {ViewListingComponent} from "./listings/viewListing.component";
 
 @NgModule({
     imports: [
@@ -50,6 +51,7 @@ import {BusyModule} from "angular2-busy";
         UserComponent,
         ProfileComponent,
         ListingComponent,
+        ViewListingComponent,
         AddListingDialog,
         UpdateListingDialog,
         DisableListingDialog,

@@ -19,13 +19,16 @@ export class ListingService {
     private updateListingUrl = this.baseUrl+'/api/listing/updatelisting';
     private disableListingUrl = this.baseUrl+'/api/listing/setlistingenabled';
     private deleteListingUrl = this.baseUrl+'/api/listing/deletelisting';
+    private getListingForIdUrl = this.baseUrl+'/api/browse/id=';
 
     constructor(private http: Http) { }
 
     getAllListings (): Observable<Listing[]> {
         return this.http.get(this.getAllListingUrl).map(this.parseData).catch(this.handleError);
     }
-
+    getGetListingForId (id: any): Observable<any[]> {
+        return this.http.get(this.getListingForIdUrl+id).map(this.parseData).catch(this.handleError);
+    }
     getFilterOptions (): Observable<any[]> {
         return this.http.get(this.getFilterOptionsUrl).map(this.parseData).catch(this.handleError);
     }

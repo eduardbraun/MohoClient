@@ -210,8 +210,9 @@ export class AddListingDialog implements OnInit{
     saveDialog() {
         this.newListing.ListingType = this.SelectedListingViewModel.listingType;
         this.newListing.ListingCountry = this.SelectedCountryViewModel.countryType;
-        this.newListing.ListingProvince = this.SelectedCountryViewModel.provinceName;
-        this.newListing.ListingCity = this.SelectedCountryViewModel.cityName;
+        this.newListing.ListingProvince = this.SelectedProvinceViewModel.provinceType;
+        this.newListing.ListingCity = this.SelectedCityViewModel.cityType;
+        console.log('newlisting aaaa is:', JSON.stringify(this.newListing));
         this.dialogRef.close(this.newListing);
     }
 
@@ -243,7 +244,7 @@ export class AddListingDialog implements OnInit{
     cityOptionsChanged(){
         let as = JSON.parse(this.selectedCity);
         this.SelectedCityViewModel = as;
-        console.log('city is:', this.SelectedProvinceViewModel);
+        console.log('city is:', this.SelectedCityViewModel);
     }
     catagoryOptionsChanged(){
         let as = JSON.parse(this.selectedListing);
