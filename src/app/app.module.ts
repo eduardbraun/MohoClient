@@ -1,4 +1,4 @@
-﻿import { NgModule }      from '@angular/core';
+﻿import {NgModule, PipeTransform} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,8 +22,11 @@ import {
     MdButtonModule, MdDialog, MdDialogModule, MdInputContainer, MdInputModule,
     MdNativeDateModule, MdOptionModule, MdSelectModule
 } from "@angular/material";
-import {AddListingDialog, UpdateListingDialog} from "./profile/profile.component";
-import {ListingComponent} from "./listings/listing.component";
+import {
+    AddListingDialog, DeleteListingDialog, DisableListingDialog,
+    UpdateListingDialog
+} from "./profile/profile.component";
+import {ListingComponent, SearchPipe} from "./listings/listing.component";
 import {BusyModule} from "angular2-busy";
 
 @NgModule({
@@ -51,7 +54,11 @@ import {BusyModule} from "angular2-busy";
         ProfileComponent,
         ListingComponent,
         AddListingDialog,
-        UpdateListingDialog
+        UpdateListingDialog,
+        DisableListingDialog,
+        DeleteListingDialog,
+        SearchPipe
+
     ],
     providers: [
         AuthGuard,
@@ -67,7 +74,9 @@ import {BusyModule} from "angular2-busy";
     bootstrap: [AppComponent],
     entryComponents: [
         AddListingDialog,
-        UpdateListingDialog
+        UpdateListingDialog,
+        DisableListingDialog,
+        DeleteListingDialog
     ]
 })
 

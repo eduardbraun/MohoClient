@@ -13,4 +13,5 @@ export class Listing {
     email : string;
     fullName : string;
     address : string;
+    listingEnabled: boolean;
 }

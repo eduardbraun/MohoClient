@@ -14,12 +14,14 @@ import {AddListing} from "../_models/addListingDto";
 // import {HttpClient, HttpResponse, HttpHeaders} from "@angular/common/http";
 @Injectable()
 export class ListingService {
-    private baseUrl = 'http://192.168.100.101:81/';
-    private getAllListingUrl = 'http://192.168.100.101:81/api/listing/getalllisting';
-    private getFilterOptionsUrl = 'http://192.168.100.101:81/api/listing/getfilteroptions';
-    private getAllListingForUserUrl = 'http://192.168.100.101:81/api/listing/getalllistingforuser';
-    private createNewListingUrl = 'http://192.168.100.101:81/api/listing/newlisting';
-    private updateListingUrl = 'http://192.168.100.101:81/api/listing/updatelisting';
+    private baseUrl = 'http://192.168.100.103:81';
+    private getAllListingUrl =  this.baseUrl+'/api/listing/getalllisting';
+    private getFilterOptionsUrl = this.baseUrl+'/api/listing/getfilteroptions';
+    private getAllListingForUserUrl = this.baseUrl+'/api/listing/getalllistingforuser';
+    private createNewListingUrl = this.baseUrl+'/api/listing/newlisting';
+    private updateListingUrl = this.baseUrl+'/api/listing/updatelisting';
+    private disableListingUrl = this.baseUrl+'/api/listing/setlistingenabled';
+    private deleteListingUrl = this.baseUrl+'/api/listing/deletelisting';
 
     constructor(private http: Http) { }
 
@@ -28,6 +30,30 @@ export class ListingService {
     }
     getFilterOptions (): Observable<any[]> {
         return this.http.get(this.getFilterOptionsUrl).map(this.parseData).catch(this.handleError);
+    }
+
+    disableListing(listing : any):  Observable<any[]>{
+        let userInfo: any = this.getToken();
+        let token = userInfo.token;
+        let headers = new Headers();
+        headers.append("Authorization",'Bearer ' + token);
+        headers.append("Content-Type","application/json");
+        let options = new RequestOptions({ headers: headers });
+        let body :any;
+
+        return this.http.post(this.disableListingUrl, listing, options).catch(this.handleError);
+    }
+
+    deleteListing(listing : any):  Observable<any[]>{
+        let userInfo: any = this.getToken();
+        let token = userInfo.token;
+        let headers = new Headers();
+        headers.append("Authorization",'Bearer ' + token);
+        headers.append("Content-Type","application/json");
+        let options = new RequestOptions({ headers: headers });
+        let body :any;
+
+        return this.http.post(this.deleteListingUrl, listing, options).catch(this.handleError);
     }
 
     getListingsForUser (): Observable<Listing[]> {

@@ -42,8 +42,13 @@
                     <td>{{list.listingDescription}}</td>
                     <td>
                         <button class="btn btn-info" (click)="openUpdateListingDialog(list)"> Edit</button>
-                        <button class="btn btn-info" (click)="openAddListingDialog()"> Delete</button>
-                        <button class="btn btn-info" (click)="openAddListingDialog()"> Disable</button>
+                        <button class="btn btn-info" (click)="openDeleteListingDialog(list)"> Delete</button>
+                        <button *ngIf="list.listingEnabled" class="btn btn-danger" (click)="openDisableListingDialog(list)">
+                            Disable
+                        </button>
+                        <button *ngIf="!list.listingEnabled" class="btn btn-danger" (click)="openDisableListingDialog(list)">
+                            Enable
+                        </button>
                         <button class="btn btn-info" (click)="openAddListingDialog()"> View Details</button>
                     </td>
                 </tr>

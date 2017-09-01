@@ -62,6 +62,67 @@ export class ProfileComponent implements OnInit {
         });
     }
 
+    openDisableListingDialog(listing: any) {
+        let dialogRef = this.dialog.open(DisableListingDialog, {
+            width: '30%'
+        });
+        dialogRef.componentInstance.updatedListing = listing;
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.results = result;
+                console.log('result for disableing is:', result);
+                this.token = JSON.parse(localStorage.getItem('currentUser'));
+                this.busy2 = this.listingService.disableListing(result)
+                    .subscribe(
+                        listings => this.lists = listings[''],
+                        error =>{
+                            this.alertService.error(error);
+                        },
+                        () =>{
+                            this.getAllListingsForUser();
+                            if(result.Enabled == true){
+                                this.alertService.success("Successfully Enabled Listing!");
+                            }else{
+                                this.alertService.success("Successfully Disabled Listing!");
+                            }
+
+                        }
+                    )
+            } else {
+                //user clicked canceled
+            }
+
+        });
+    }
+
+    openDeleteListingDialog(listing: any) {
+        let dialogRef = this.dialog.open(DeleteListingDialog, {
+            width: '30%'
+        });
+        dialogRef.componentInstance.updatedListing = listing;
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.results = result;
+                console.log('result for disableing is:', result);
+                this.token = JSON.parse(localStorage.getItem('currentUser'));
+                this.busy2 = this.listingService.deleteListing(result)
+                    .subscribe(
+                        listings => this.lists = listings[''],
+                        error =>{
+                            this.alertService.error(error);
+                        },
+                        () =>{
+                            this.getAllListingsForUser();
+                            this.alertService.success("Successfully Deleted Listing!");
+                        }
+                    )
+            } else {
+                //user clicked canceled
+            }
+
+        });
+    }
+
     openUpdateListingDialog(listing: any) {
         let updateList = listing;
         if (updateList != null) {
@@ -194,7 +255,7 @@ export class AddListingDialog implements OnInit{
 }
 
 @Component({
-    selector: 'addListing.component',
+    selector: 'updateListing.component',
     templateUrl: '../profile/updateListing.component.html',
 })
 export class UpdateListingDialog implements OnInit {
@@ -266,6 +327,76 @@ export class UpdateListingDialog implements OnInit {
         // console.log('countries is:',this.countries );
         // console.log('provinces is:', this.provinces);
         // console.log('citites is:', this.cities);
+    }
+
+    saveDialog() {
+        this.dialogRef.close(this.listing);
+    }
+}
+
+@Component({
+    selector: 'addListing.component',
+    templateUrl: '../profile/disableListingDialog.component.html',
+})
+export class DisableListingDialog implements OnInit {
+    @Input() updatedListing: any = {};
+    listing: any;
+    title : string;
+    constructor(public dialogRef: MdDialogRef<UpdateListingDialog>) {
+    }
+
+    ListingViewModel = function (listing: any) {
+        this.UserListingId = listing.userListingId;
+        this.OwnerId = listing.ownerId;
+        this.Enabled = listing.listingEnabled;
+    };
+
+
+    ngOnInit(): void {
+        console.log('list is:', this.updatedListing);
+        this.listing = new this.ListingViewModel(this.updatedListing);
+
+        if(this.listing.Enabled){
+            this.title = "Disable";
+        }else{
+            this.title = "Enable";
+        }
+
+    }
+
+    saveDialog() {
+        if(this.listing.Enabled){
+            this.listing.Enabled = false;
+        }else{
+            this.listing.Enabled = true;
+        }
+
+        this.dialogRef.close(this.listing);
+    }
+}
+
+@Component({
+    selector: 'addListing.component',
+    templateUrl: '../profile/disableListingDialog.component.html',
+})
+export class DeleteListingDialog implements OnInit {
+    @Input() updatedListing: any = {};
+    listing: any;
+    title: string = "Delete";
+
+    constructor(public dialogRef: MdDialogRef<UpdateListingDialog>) {
+    }
+
+    ListingViewModel = function (listing: any) {
+        this.UserListingId = listing.userListingId;
+        this.OwnerId = listing.ownerId;
+    };
+
+
+    ngOnInit(): void {
+        console.log('list is:', this.updatedListing);
+        this.listing = new this.ListingViewModel(this.updatedListing);
+
     }
 
     saveDialog() {
