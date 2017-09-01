@@ -7,13 +7,14 @@ import 'rxjs/add/observable/throw';
 import {HttpClient, HttpResponse, HttpHeaders} from "@angular/common/http";
 import {ListingService} from "../_services/listing.service";
 import {Subscription} from "rxjs/Subscription";
+import {Router} from "@angular/router";
 
 @Component({
     moduleId: module.id.toString(),
     templateUrl: 'listing.component.html',
 })
 export class ListingComponent implements OnInit {
-    constructor( private listingService: ListingService, public dialog: MdDialog){
+    constructor( private router: Router, private listingService: ListingService, public dialog: MdDialog){
 
     }
     busy: Subscription;
@@ -22,6 +23,10 @@ export class ListingComponent implements OnInit {
     lists : Listing[];
     toggleFilterEnabled: boolean = false;
     ngOnInit() { this.getAllListings(); }
+
+    openViewListingPage(listing: any){
+        this.router.navigate(['listing', listing.userListingId]);
+    }
 
     toggleFilter(){
         if(this.toggleFilterEnabled == true){

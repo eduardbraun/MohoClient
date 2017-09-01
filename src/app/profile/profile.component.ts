@@ -10,13 +10,14 @@ import {_finally} from "rxjs/operator/finally";
 import {Subscription} from "rxjs/Subscription";
 import {forEach} from "@angular/router/src/utils/collection";
 import {AlertService} from "../_services/alert.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
     moduleId: module.id.toString(),
     templateUrl: 'profile.component.html',
 })
 export class ProfileComponent implements OnInit {
-    constructor(private listingService: ListingService, public dialog: MdDialog,  private alertService: AlertService) {
+    constructor( private router: Router, private listingService: ListingService, public dialog: MdDialog,  private alertService: AlertService) {
 
     }
     busy: Subscription;
@@ -31,7 +32,9 @@ export class ProfileComponent implements OnInit {
         this.getAllListingsForUser();
         this.getFilterOptions();
     }
-
+    openViewListingPage(listing: any){
+        this.router.navigate(['listing', listing.userListingId]);
+    }
     openAddListingDialog() {
         let dialogRef = this.dialog.open(AddListingDialog, {
             width: '60%'
