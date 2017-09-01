@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="83288690-bb6d-49f9-a5c9-8f1c50ff5cf0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/listings/listing.component.html" afterPath="$PROJECT_DIR$/src/app/listings/listing.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/listings/listing.component.ts" afterPath="$PROJECT_DIR$/src/app/listings/listing.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/listings/viewListing.component.html" afterPath="$PROJECT_DIR$/src/app/listings/viewListing.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/profile/profile.component.html" afterPath="$PROJECT_DIR$/src/app/profile/profile.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/profile/profile.component.ts" afterPath="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -326,7 +321,7 @@
       <workItem from="1504148273260" duration="8058000" />
       <workItem from="1504230241513" duration="6359000" />
       <workItem from="1504237739592" duration="1220000" />
-      <workItem from="1504285916236" duration="8313000" />
+      <workItem from="1504285916236" duration="8946000" />
     </task>
     <task id="LOCAL-00001" summary="added auth for the web api">
       <created>1503512797870</created>
@@ -447,11 +442,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504296759688</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="implemented viewcomponent for viewing the listing by their id">
+      <created>1504301476942</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1504301476942</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110243000" />
+    <option name="totallyTimeSpent" value="110876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -463,7 +465,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40628386" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1796875" sideWeight="0.50558215" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5054348" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5054348" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -524,7 +526,8 @@
     <MESSAGE value="updated allert service to include error info and success messages. Can now updated and add data using the filteroptions" />
     <MESSAGE value="added delete and enable/disable listing feature" />
     <MESSAGE value="can now look for listig by paramterized url" />
-    <option name="LAST_COMMIT_MESSAGE" value="can now look for listig by paramterized url" />
+    <MESSAGE value="implemented viewcomponent for viewing the listing by their id" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented viewcomponent for viewing the listing by their id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
