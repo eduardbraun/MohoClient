@@ -1,23 +1,41 @@
-.filterable {
-    margin-top: 15px;
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
 }
-.filterable .panel-heading .pull-right {
-    margin-top: -20px;
+/**
+ * Profile image component
+ */
+.profile-header-container{
+    margin: 0 auto;
+    text-align: center;
 }
-.filterable .filters input[disabled] {
-    background-color: transparent;
-    border: none;
-    cursor: auto;
-    box-shadow: none;
-    padding: 0;
-    height: auto;
+
+.profile-header-img {
+    padding: 54px;
 }
-.filterable .filters input[disabled]::-webkit-input-placeholder {
-    color: #333;
+
+.profile-header-img > img.img-circle {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #51D2B7;
 }
-.filterable .filters input[disabled]::-moz-placeholder {
-    color: #333;
+
+.profile-header {
+    margin-top: 43px;
 }
-.filterable .filters input[disabled]:-ms-input-placeholder {
-    color: #333;
+
+/**
+ * Ranking component
+ */
+.rank-label-container {
+    margin-top: -19px;
+    /* z-index: 1000; */
+    text-align: center;
+}
+
+.label.label-default.rank-label {
+    background-color: rgb(81, 210, 183);
+    padding: 5px 10px 5px 10px;
+    border-radius: 27px;
 }

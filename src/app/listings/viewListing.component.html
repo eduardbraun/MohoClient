@@ -1,31 +1,102 @@
-<div class="container">
-    <div class="row">
-        <div class="panel panel-primary filterable clearfix">
-            <div class="panel-heading">
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-primary">
+            <div class="panel-heading ex">
                 <h4 class="panel-title">{{list.listingTitle}}</h4>
             </div>
-
             <div class="panel-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-
-                        </div>
-                        <div class="col-md-4">
-
-                        </div>
-                        <div class="col-md-4">
-                            <h5> Location:
-                            <small>{{list.country}}</small>,
-                            <small>{{list.province}}</small>,
+                <div class="row">
+                    <div class="col-md-4">
+                        <small>{{list.listingType}}</small>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <h5>
+                            <small>{{list.country}}</small>
+                            ,
+                            <small>{{list.province}}</small>
+                            ,
                             <small>{{list.city}}</small>
-                            </h5>
+                        </h5>
+                    </div>
+                </div>
+                <div class="span3 well">
+                    <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img
+                            src="https://cdn.pixabay.com/photo/2014/11/28/01/01/jay-548381_960_720.jpg"
+                            name="aboutme" width="140" height="140" class="img-circle"></a>
+                    <h3>Full Name</h3>
+                    <span class="badge badge-primary">+10</span>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label>Description:</label>
+                    </div>
+                    <div class="col-md-8">
+                        {{list.listingDescription}}
+                    </div>
+                    <div class="col-md-3">
+
+                    </div>
+                </div>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <div class="row">
+
+                    <div class="col-md-1">
+                        <label>Contact:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="">
+                            <span class="badge badge-info">Name:</span> {{list.fullName}}
+                        </div>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <div class="">
+                            <span class="badge badge-info">Phone:</span> {{list.phoneNumber}}
+                        </div>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <div class="">
+                            <span class="badge badge-info">Address:</span> {{list.address}}
+                        </div>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <div class="">
+                            <span class="badge badge-info">Email:</span> {{list.email}}
                         </div>
                     </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
 
+                    </div>
+                    <div class="col-md-8">
+                        <div class="container">
 
-
-
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        Views <span class="badge badge-primary">{{list.views}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <small>Added Date:</small>
+                        {{listingDate}}
+                    </div>
+                    <div class="col-md-6 col">
+                        <small>Updated Date:</small>
+                        {{updatedListingDate}}
+                    </div>
                 </div>
             </div>
         </div>

@@ -24,6 +24,8 @@ export class ViewListingComponent implements OnInit {
 
     busy: Subscription;
     list : any = {};
+    listingDate : any;
+    updatedListingDate : any;
     errorMessage: string;
     toggleFilterEnabled: boolean = false;
     ngOnInit() {
@@ -38,6 +40,10 @@ export class ViewListingComponent implements OnInit {
                 error => this.alertService.error("Error getting the Listing, it might not exist!"),
                 ()=>{
                     console.log("list", this.list);
+                    var dt = new Date(Date.parse(this.list.listingDate));
+                    this.listingDate = dt.getFullYear() + "/" + dt.getMonth() + "/" + dt.getDay();
+                    var dt2 = new Date(Date.parse(this.list.lastUpdatedDate));
+                    this.updatedListingDate = dt2.getFullYear() + "/" + dt2.getMonth() + "/" + dt2.getDay();
                 }
             )
     }
