@@ -11,17 +11,18 @@
                     <div class="span3 well">
                         <div class="row">
                             <div class="col-md-6"><a href="#aboutModal" data-toggle="modal" data-target="#myModal">
-                                <img [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
+                                <img *ngIf="profile.avatarImage != null" [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
+                                     height="140" class="img-circle"/>
+                                <img *ngIf="profile.avatarImage == null" src="../../assets/images/default_profile.png" name="aboutme" width="140"
                                      height="140" class="img-circle"/>
                             </a>
                                 <h3>{{profile.firstName}} {{profile.lastName}}</h3>
                                 <span class="badge badge-primary">+10</span></div>
                             <div class="col-md-6">
-                                <div><label> Username: </label> {{profile.userName}}</div>
-                                <div><label> Email: </label> {{profile.email}}</div>
+                                <div *ngIf="profile.userName != null"><label> Username: </label> {{profile.userName}}</div>
+                                <div *ngIf="profile.userName != null"><label> Email: </label> {{profile.email}}</div>
                             </div>
                         </div>
-
                     </div>
                     <div>
                         <div>
