@@ -1,0 +1,12 @@
+<h2 md-dialog-title>{{title}} Change Profile Picture</h2>
+<md-dialog-content>
+    <small>Upload Image</small>
+    <input type="file" accept="image/*" id="profileImageChange"/>
+</md-dialog-content>
+
+<md-dialog-actions>
+    <div class="form-actions">
+        <button class="btn btn-primary" (click)="saveDialog()">Confirm</button>
+        <button class="btn btn-default" md-dialog-close>Cancel</button>
+    </div>
+</md-dialog-actions>

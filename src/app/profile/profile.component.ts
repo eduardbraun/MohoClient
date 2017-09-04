@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, EventEmitter, ElementRef} from '@angular/core';
 import {Listing} from "../_models/listing";
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -18,7 +18,9 @@ import {UserService} from '../_services/user.service';
     templateUrl: 'profile.component.html',
 })
 export class ProfileComponent implements OnInit {
-    constructor( private router: Router, private listingService: ListingService, private userService: UserService, public dialog: MdDialog,  private alertService: AlertService) {
+    constructor( private router: Router, private listingService: ListingService,
+                 private userService: UserService, public dialog: MdDialog,
+                 private alertService: AlertService) {
 
     }
     busy: Subscription;
@@ -157,6 +159,30 @@ export class ProfileComponent implements OnInit {
         }
     }
 
+    openChangeProfilePictureDialog(){
+        let dialogRef = this.dialog.open(ChangeProfilePictureDialog, {
+
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.results = result;
+                this.busy = this.userService.changeProfileImage(result)
+                    .subscribe(
+                        profile => this.profile = JSON.parse(profile['_body']),
+                        error =>{
+                            this.alertService.error(error);
+                        },
+                        () =>{
+                            this.alertService.success("Successfully updated Profile Image!");
+                            console.log("profile", this.profile);
+                        }
+                    )
+            } else {
+                //user clicked canceled
+            }
+
+        });
+    }
     getAllListingsForUser() {
         this.busy = this.userService.getUserProfileSettings()
             .subscribe(
@@ -168,7 +194,6 @@ export class ProfileComponent implements OnInit {
                 }
             )
     }
-
     getFilterOptions() {
         this.busy = this.listingService.getFilterOptions()
             .subscribe(
@@ -177,6 +202,36 @@ export class ProfileComponent implements OnInit {
                     this.alertService.error(error);
                 }
             )
+    }
+}
+
+@Component({
+    selector: 'changeProfilePictureDialog',
+    templateUrl: '../profile/changeProfilePictureDialog.html',
+})
+export class ChangeProfilePictureDialog implements OnInit{
+
+    constructor(public dialogRef: MdDialogRef<ChangeProfilePictureDialog>,
+                private el: ElementRef, private alertService: AlertService) {
+    }
+
+    selectedFile : any;
+
+    ngOnInit(): void {
+
+    }
+    saveDialog() {
+        let inputEl: HTMLInputElement = this.el.nativeElement.querySelector('#profileImageChange');
+        let fileCount: number = inputEl.files.length;
+        if (fileCount > 0) {
+            this.selectedFile = inputEl.files.item(0);
+            let formData:FormData = new FormData();
+            formData.append(this.selectedFile.name, this.selectedFile);
+            console.log('selectedFile is:', formData);
+            this.dialogRef.close(formData);
+        }else{
+            this.alertService.error("You have not selected an Image");
+        }
     }
 }
 

@@ -14,13 +14,12 @@ import { RegisterComponent } from './register/index';
 import { UserComponent } from './user/index';
 import { ProfileComponent } from './profile/index';
 import {ListingService} from "./_services/listing.service";
-import {CdkTableModule} from "@angular/cdk";
 import {
-    MdButtonModule, MdDialog, MdDialogModule, MdInputContainer, MdInputModule,
+    MdButtonModule, MdDialog, MdDialogModule, MdInputModule,
     MdNativeDateModule, MdOptionModule, MdSelectModule
 } from "@angular/material";
 import {
-    AddListingDialog, DeleteListingDialog, DisableListingDialog,
+    AddListingDialog, ChangeProfilePictureDialog, DeleteListingDialog, DisableListingDialog,
     UpdateListingDialog
 } from "./profile/profile.component";
 import {ListingComponent} from "./listings/listing.component";
@@ -55,7 +54,8 @@ import {ViewListingComponent} from "./listings/viewListing.component";
         AddListingDialog,
         UpdateListingDialog,
         DisableListingDialog,
-        DeleteListingDialog
+        DeleteListingDialog,
+        ChangeProfilePictureDialog
     ],
     providers: [
         AuthGuard,
@@ -72,7 +72,8 @@ import {ViewListingComponent} from "./listings/viewListing.component";
         AddListingDialog,
         UpdateListingDialog,
         DisableListingDialog,
-        DeleteListingDialog
+        DeleteListingDialog,
+        ChangeProfilePictureDialog
     ]
 })
 
