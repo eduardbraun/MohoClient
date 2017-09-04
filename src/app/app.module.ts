@@ -12,11 +12,12 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { UserComponent } from './user/index';
+import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import { ProfileComponent } from './profile/index';
 import {ListingService} from "./_services/listing.service";
 import {
     MdButtonModule, MdDialog, MdDialogModule, MdInputModule,
-    MdNativeDateModule, MdOptionModule, MdSelectModule
+    MdNativeDateModule, MdOptionModule, MdSelectModule, MdTooltipModule
 } from "@angular/material";
 import {
     AddListingDialog, ChangeProfilePictureDialog, DeleteListingDialog, DisableListingDialog,
@@ -37,8 +38,10 @@ import {ViewListingComponent} from "./listings/viewListing.component";
         MdDialogModule,
         MdOptionModule,
         MdSelectModule,
+        MdTooltipModule,
         BusyModule,
         MdNativeDateModule,
+        AngularFontAwesomeModule,
         routing
     ],
     declarations: [

@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
     filteroptions :any = {};
 
     ngOnInit() {
-        this.getAllListingsForUser();
+        this.getUserProfile();
         this.getFilterOptions();
     }
     openViewListingPage(listing: any){
@@ -142,12 +142,11 @@ export class ProfileComponent implements OnInit {
                     this.results = result;
                     this.busy = this.listingService.updateListing(result)
                         .subscribe(
-                            listings => this.lists = listings[''],
+                            listings =>  this.getAllListingsForUser(),
                             error =>{
                                 this.alertService.error(error);
                             },
                             () =>{
-                                this.getAllListingsForUser();
                                 this.alertService.success("Successfully updated Listing!");
                             }
                         )
@@ -183,7 +182,19 @@ export class ProfileComponent implements OnInit {
 
         });
     }
+
     getAllListingsForUser() {
+        this.listingService.getAllListingsForUser()
+            .subscribe(
+                listings => this.lists = JSON.parse(listings['userListingCollectionDto']),
+                error => this.errorMessage = error,
+                ()=>{
+                  console.log("new get all", this.lists);
+                }
+            )
+    }
+
+    getUserProfile() {
         this.busy = this.userService.getUserProfileSettings()
             .subscribe(
                 listings => this.data = listings,

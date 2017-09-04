@@ -1,4 +1,5 @@
 <div class="container-fluid">
+    <div [ngBusy]="busy"></div>
     <div class="row">
         <div class="col-md-3">
             <div class="panel panel-primary">
@@ -6,37 +7,38 @@
                     <h5 class="">Listing Options</h5>
                 </div>
                 <div class="panel-body">
-                    <div [ngBusy]="busy2"></div>
-                    <div [ngBusy]="busy"></div>
                     <div class="span3 well">
                         <div class="row">
                             <div class="col-md-6"><a href="#aboutModal" data-toggle="modal" data-target="#myModal">
-                                <img *ngIf="profile.avatarImage != null" [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
+                                <img *ngIf="profile.avatarImage != null"
+                                     [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
                                      height="140" class="img-circle"/>
-                                <img *ngIf="profile.avatarImage == null" src="../../assets/images/default_profile.png" name="aboutme" width="140"
+                                <img *ngIf="profile.avatarImage == null" src="../../assets/images/default_profile.png"
+                                     name="aboutme" width="140"
                                      height="140" class="img-circle"/>
                             </a>
                                 <h3>{{profile.firstName}} {{profile.lastName}}</h3>
                                 <span class="badge badge-primary">+10</span></div>
                             <div class="col-md-6">
-                                <div *ngIf="profile.userName != null"><label> Username: </label> {{profile.userName}}</div>
+                                <div *ngIf="profile.userName != null"><label> Username: </label> {{profile.userName}}
+                                </div>
                                 <div *ngIf="profile.userName != null"><label> Email: </label> {{profile.email}}</div>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <button class="btn btn-sm btn-primary" (click)="openChangeProfilePictureDialog()">Change Profile Picture
+                            <button class="btn btn-sm btn-primary" (click)="openChangeProfilePictureDialog()">Change
+                                Profile Picture
                             </button>
                         </div>
                         <div>
-                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Password</button>
+                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Password
+                            </button>
                         </div>
                         <div>
-                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Username</button>
-                        </div>
-                        <div>
-                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Add Listing</button>
+                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Username
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -45,10 +47,13 @@
         <div class="col-md-9">
             <div class="panel panel-primary">
                 <div class="panel-heading">
+                    <div class="pull-right">
+                        <button class="btn btn-sm btn-primary" md-tooltip="Add Listing" (click)="openAddListingDialog()"> <span
+                                class="fa fa-plus"> Add Listing</span></button>
+                    </div>
                     <h5 class="">Your Listings</h5>
                 </div>
                 <div class="panel-body">
-                    <div [ngBusy]="busy"></div>
                     <table class="table table-striped table-hover ">
                         <thead>
                         <tr>
@@ -66,19 +71,26 @@
                             <td>{{list.listingTitle}}</td>
                             <td>{{list.listingDescription}}</td>
                             <td>
-                                <button class="btn btn-sm  btn-info" (click)="openUpdateListingDialog(list)"> Edit
+                                <button class="btn btn-sm btn-default" md-tooltip="Edit Listing" (click)="openUpdateListingDialog(list)">
+                                    <span
+                                        class="fa fa-pencil"></span>
                                 </button>
-                                <button class="btn btn-sm  btn-info" (click)="openDeleteListingDialog(list)"> Delete
-                                </button>
-                                <button *ngIf="list.listingEnabled" class="btn btn-danger"
+                                <button *ngIf="list.listingEnabled" md-tooltip="Disable Listing" class="btn btn-default"
                                         (click)="openDisableListingDialog(list)">
-                                    Disable
+                                     <span
+                                             class="fa fa-ban"></span>
                                 </button>
-                                <button *ngIf="!list.listingEnabled" class="btn btn-sm  btn-danger"
+                                <button *ngIf="!list.listingEnabled" md-tooltip="Enable Listing" class="btn btn-sm  btn-info"
                                         (click)="openDisableListingDialog(list)">
-                                    Enable
+                                    <span
+                                            class="fa fa-ban"></span>
                                 </button>
-                                <button class="btn btn-sm btn-info" (click)="openViewListingPage(list)"> View Details
+                                <button class="btn btn-sm btn-default" md-tooltip="View Listing" (click)="openViewListingPage(list)">     <span
+                                        class="fa fa-eye"></span>
+                                </button>
+                                <button class="btn btn-sm btn-danger" md-tooltip="Delete Listing" (click)="openDeleteListingDialog(list)">
+                                    <span
+                                            class="fa fa-trash"></span>
                                 </button>
                             </td>
                         </tr>

@@ -57,7 +57,16 @@ export class ListingService {
         return this.http.post(this.deleteListingUrl, listing, options).catch(this.handleError);
     }
 
+    getAllListingsForUser (): Observable<any[]> {
+        let userInfo: any = this.getToken();
+        let token = userInfo.token;
+        let headers = new Headers();
+        headers.append("Authorization",'Bearer ' + token);
+        headers.append("Content-Type","application/json");
+        let options = new RequestOptions({ headers: headers });
 
+        return this.http.get(this.getAllListingForUserUrl, options).map(this.parseData).catch(this.handleError);
+    }
 
     createNewListing (listing: AddListing): Observable<Listing[]> {
 
