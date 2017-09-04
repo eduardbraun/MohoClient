@@ -11,20 +11,23 @@ import {Subscription} from "rxjs/Subscription";
 import {forEach} from "@angular/router/src/utils/collection";
 import {AlertService} from "../_services/alert.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from '../_services/user.service';
 
 @Component({
     moduleId: module.id.toString(),
     templateUrl: 'profile.component.html',
 })
 export class ProfileComponent implements OnInit {
-    constructor( private router: Router, private listingService: ListingService, public dialog: MdDialog,  private alertService: AlertService) {
+    constructor( private router: Router, private listingService: ListingService, private userService: UserService, public dialog: MdDialog,  private alertService: AlertService) {
 
     }
     busy: Subscription;
     busy2: Subscription;
     results: any = {};
     errorMessage: string;
-    lists: any;
+    lists: any = {};
+    profile: any = {};
+    data : any = {};
     token: any = {};
     filteroptions :any = {};
 
@@ -155,10 +158,14 @@ export class ProfileComponent implements OnInit {
     }
 
     getAllListingsForUser() {
-        this.busy = this.listingService.getListingsForUser()
+        this.busy = this.userService.getUserProfileSettings()
             .subscribe(
-                listings => this.lists = listings['listingsCollection'],
-                error => this.errorMessage = error
+                listings => this.data = listings,
+                error => this.errorMessage = error,
+                ()=>{
+                    this.lists = this.data['userListingCollectionDto'];
+                    this.profile = this.data['userProfileDto'];
+                }
             )
     }
 
@@ -215,44 +222,36 @@ export class AddListingDialog implements OnInit{
         this.newListing.ListingCountry = this.SelectedCountryViewModel.countryType;
         this.newListing.ListingProvince = this.SelectedProvinceViewModel.provinceType;
         this.newListing.ListingCity = this.SelectedCityViewModel.cityType;
-        console.log('newlisting aaaa is:', JSON.stringify(this.newListing));
         this.dialogRef.close(this.newListing);
     }
 
     countryOptionsChanged(){
         let as = JSON.parse(this.selectedCountry);
         this.SelectedCountryViewModel = as;
-        console.log('country is:', this.SelectedCountryViewModel);
 
         if(this.SelectedCountryViewModel != null){
             this.provinceSelectionEnabled = true;
             this.citySelectionEnabled = false;
             this.cities = {};
             this.provinces = this.SelectedCountryViewModel.provinces;
-            console.log('provinces is:', this.provinces);
         }
     }
     provinceOptionsChanged(){
         let as = JSON.parse(this.selectedProvince);
         this.SelectedProvinceViewModel = as;
-        console.log('province is:', this.SelectedProvinceViewModel);
 
         if(this.SelectedProvinceViewModel != null){
             this.citySelectionEnabled = true;
             this.cities = this.SelectedProvinceViewModel.cities;
-            console.log('citites is:', this.cities);
-
         }
     }
     cityOptionsChanged(){
         let as = JSON.parse(this.selectedCity);
         this.SelectedCityViewModel = as;
-        console.log('city is:', this.SelectedCityViewModel);
     }
     catagoryOptionsChanged(){
         let as = JSON.parse(this.selectedListing);
         this.SelectedListingViewModel = as;
-        console.log('filteroptions is:', this.SelectedListingViewModel);
     }
 }
 

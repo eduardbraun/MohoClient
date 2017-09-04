@@ -7,7 +7,37 @@
                 </div>
                 <div class="panel-body">
                     <div [ngBusy]="busy2"></div>
-                    <button class="btn btn-primary" (click)="openAddListingDialog()">Add Listing</button>
+                    <div [ngBusy]="busy"></div>
+                    <div class="span3 well">
+                        <div class="row">
+                            <div class="col-md-6"><a href="#aboutModal" data-toggle="modal" data-target="#myModal">
+                                <img [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
+                                     height="140" class="img-circle"/>
+                            </a>
+                                <h3>{{profile.firstName}} {{profile.lastName}}</h3>
+                                <span class="badge badge-primary">+10</span></div>
+                            <div class="col-md-6">
+                                <div><label> Username: </label> {{profile.userName}}</div>
+                                <div><label> Email: </label> {{profile.email}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Profile Picture
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Password</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Username</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Add Listing</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -29,14 +59,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr *ngFor="let list of lists; let i = index">
+                        <tr *ngFor="let list of lists.listingsCollection; let i = index">
                             <td>{{i}}</td>
                             <td>{{list.listingType}}</td>
                             <td>{{list.listingTitle}}</td>
                             <td>{{list.listingDescription}}</td>
                             <td>
-                                <button class="btn btn-sm  btn-info" (click)="openUpdateListingDialog(list)"> Edit</button>
-                                <button class="btn btn-sm  btn-info" (click)="openDeleteListingDialog(list)"> Delete</button>
+                                <button class="btn btn-sm  btn-info" (click)="openUpdateListingDialog(list)"> Edit
+                                </button>
+                                <button class="btn btn-sm  btn-info" (click)="openDeleteListingDialog(list)"> Delete
+                                </button>
                                 <button *ngIf="list.listingEnabled" class="btn btn-danger"
                                         (click)="openDisableListingDialog(list)">
                                     Disable
@@ -45,7 +77,8 @@
                                         (click)="openDisableListingDialog(list)">
                                     Enable
                                 </button>
-                                <button class="btn btn-sm btn-info" (click)="openViewListingPage(list)"> View Details</button>
+                                <button class="btn btn-sm btn-info" (click)="openViewListingPage(list)"> View Details
+                                </button>
                             </td>
                         </tr>
                         </tbody>
