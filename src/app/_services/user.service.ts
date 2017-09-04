@@ -6,7 +6,7 @@ import { User } from '../_models/index';
 @Injectable()
 export class UserService {
     constructor(private http: Http) { }
-    private baseUrl = 'http://192.168.100.103:81';
+    private baseUrl = 'http://192.168.100.101:81';
     create(user: User) {
         var body = `firstname=${user.firstname}&lastname=${user.lastname}&password=${user.password}&confirmpassword=${user.password}&email=${user.email}`;
         var headers = new Headers();

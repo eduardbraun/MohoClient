@@ -5,6 +5,7 @@
                 <h4 class="panel-title">{{list.listingTitle}}</h4>
             </div>
             <div class="panel-body">
+                <div [ngBusy]="busy"></div>
                 <div class="row">
                     <div class="col-md-4">
                         <small>{{list.listingType}}</small>
@@ -22,11 +23,12 @@
                     </div>
                 </div>
                 <div class="span3 well">
-                    <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img
-                            src="https://cdn.pixabay.com/photo/2014/11/28/01/01/jay-548381_960_720.jpg"
-                            name="aboutme" width="140" height="140" class="img-circle"></a>
-                    <h3>Full Name</h3>
-                    <span class="badge badge-primary">+10</span>
+                    <a href="#aboutModal" data-toggle="modal" data-target="#myModal">
+                        <img [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
+                             height="140" class="img-circle"/>
+                    </a>
+                        <h3>{{profile.firstName}} {{profile.lastName}}</h3>
+                        <span class="badge badge-primary">+10</span>
                 </div>
                 <div class="row">
                     <div class="col-md-1">
@@ -49,25 +51,25 @@
                     </div>
                     <div class="col-md-8">
                         <div class="">
-                            <span class="badge badge-info">Name:</span> {{list.fullName}}
+                            <label>Name:</label> {{list.fullName}}
                         </div>
                         &nbsp;
                         &nbsp;
                         &nbsp;
                         <div class="">
-                            <span class="badge badge-info">Phone:</span> {{list.phoneNumber}}
+                            <label>Phone:</label> {{list.phoneNumber}}
                         </div>
                         &nbsp;
                         &nbsp;
                         &nbsp;
                         <div class="">
-                            <span class="badge badge-info">Address:</span> {{list.address}}
+                            <label>Address:</label> {{list.address}}
                         </div>
                         &nbsp;
                         &nbsp;
                         &nbsp;
                         <div class="">
-                            <span class="badge badge-info">Email:</span> {{list.email}}
+                            <label>Email:</label> {{list.email}}
                         </div>
                     </div>
                     <div class="col-md-3">

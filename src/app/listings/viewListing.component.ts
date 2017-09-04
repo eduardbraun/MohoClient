@@ -24,6 +24,8 @@ export class ViewListingComponent implements OnInit {
 
     busy: Subscription;
     list : any = {};
+    data : any = {};
+    profile : any = {};
     listingDate : any;
     updatedListingDate : any;
     errorMessage: string;
@@ -36,10 +38,13 @@ export class ViewListingComponent implements OnInit {
         console.log("Param Id", id);
         this.busy = this.listingService.getGetListingForId(id)
             .subscribe(
-                listing => this.list = listing['userListing'],
+                listing => this.data = listing,
                 error => this.alertService.error("Error getting the Listing, it might not exist!"),
                 ()=>{
+                    this.list = this.data['userListing'];
+                    this.profile = this.data['userProfileDto'];
                     console.log("list", this.list);
+                    console.log("prifle", this.profile);
                     var dt = new Date(Date.parse(this.list.listingDate));
                     this.listingDate = dt.getFullYear() + "/" + dt.getMonth() + "/" + dt.getDay();
                     var dt2 = new Date(Date.parse(this.list.lastUpdatedDate));
