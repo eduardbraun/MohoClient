@@ -11,7 +11,7 @@ import {AddListing} from "../_models/addListingDto";
 
 @Injectable()
 export class ListingService {
-    private baseUrl = 'http://192.168.100.101:81';
+    private baseUrl = 'http://108.59.84.13';
     private getAllListingUrl =  this.baseUrl+'/api/listing/getalllisting';
     private getFilterOptionsUrl = this.baseUrl+'/api/listing/getfilteroptions';
     private getAllListingForUserUrl = this.baseUrl+'/api/listing/getalllistingforuser';

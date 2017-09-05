@@ -78,13 +78,14 @@ export class ProfileComponent implements OnInit {
                 this.results = result;
                 console.log('result for disableing is:', result);
                 this.token = JSON.parse(localStorage.getItem('currentUser'));
-                this.busy2 = this.listingService.disableListing(result)
+                this.busy = this.listingService.disableListing(result)
                     .subscribe(
-                        listings => this.lists = listings[''],
+                        listings => this.data = listings ,
                         error =>{
                             this.alertService.error(error);
                         },
                         () =>{
+                            console.log('result for data is:', this.data);
                             this.getAllListingsForUser();
                             if(result.Enabled == true){
                                 this.alertService.success("Successfully Enabled Listing!");
@@ -113,7 +114,7 @@ export class ProfileComponent implements OnInit {
                 this.token = JSON.parse(localStorage.getItem('currentUser'));
                 this.busy2 = this.listingService.deleteListing(result)
                     .subscribe(
-                        listings => this.lists = listings[''],
+                        listings => this.data = listings[''],
                         error =>{
                             this.alertService.error(error);
                         },
@@ -186,7 +187,7 @@ export class ProfileComponent implements OnInit {
     getAllListingsForUser() {
         this.listingService.getAllListingsForUser()
             .subscribe(
-                listings => this.lists = JSON.parse(listings['userListingCollectionDto']),
+                listings => this.lists = listings['userListingCollectionDto'],
                 error => this.errorMessage = error,
                 ()=>{
                   console.log("new get all", this.lists);
