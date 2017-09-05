@@ -7,7 +7,9 @@ import {HttpHeaders} from "@angular/common/http";
 @Injectable()
 export class AuthenticationService {
     constructor(private http: Http) { }
-    private baseUrl = 'http://108.59.84.13';
+    private baseUrl = 'http://192.168.100.103:81';
+
+    // private baseUrl = 'http://108.59.84.13';
     @Output() getUserInfo: EventEmitter<any> = new EventEmitter();
 
     login(email: string, password: string) {
