@@ -236,10 +236,15 @@ export class ChangeProfilePictureDialog implements OnInit{
         let fileCount: number = inputEl.files.length;
         if (fileCount > 0) {
             this.selectedFile = inputEl.files.item(0);
-            let formData:FormData = new FormData();
-            formData.append(this.selectedFile.name, this.selectedFile);
-            console.log('selectedFile is:', formData);
-            this.dialogRef.close(formData);
+            if(this.selectedFile.type.match('image.*')){
+                let formData:FormData = new FormData();
+                formData.append(this.selectedFile.name, this.selectedFile);
+                console.log('selectedFile is:', formData);
+                this.dialogRef.close(formData);
+            }
+            else{
+                this.alertService.error("The file you have selected is not an image");
+            }
         }else{
             this.alertService.error("You have not selected an Image");
         }
