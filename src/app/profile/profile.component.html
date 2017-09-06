@@ -19,27 +19,21 @@
                             </a>
                                 <h3>{{profile.firstName}} {{profile.lastName}}</h3>
                                 <span class="badge badge-primary">+10</span></div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 form-group">
                                 <div *ngIf="profile.userName != null"><label> Username: </label> {{profile.userName}}
                                 </div>
                                 <div *ngIf="profile.userName != null"><label> Email: </label> {{profile.email}}</div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div>
-                            <button class="btn btn-sm btn-primary" (click)="openChangeProfilePictureDialog()">Change
-                                Profile Picture
-                            </button>
-                        </div>
-                        <div>
-                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Password
-                            </button>
-                        </div>
-                        <div>
-                            <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Username
-                            </button>
-                        </div>
+                    <div class="btn-group-vertical">
+                        <button class="btn btn-sm btn-primary" (click)="openChangeProfilePictureDialog()">Change
+                            Profile Picture
+                        </button>
+                        <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Password
+                        </button>
+                        <button class="btn btn-sm btn-primary" (click)="openAddListingDialog()">Change Username
+                        </button>
                     </div>
                 </div>
             </div>
@@ -48,7 +42,8 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="pull-right">
-                        <button class="btn btn-sm btn-primary" md-tooltip="Add Listing" (click)="openAddListingDialog()"> <span
+                        <button class="btn btn-sm btn-primary" md-tooltip="Add Listing"
+                                (click)="openAddListingDialog()"> <span
                                 class="fa fa-plus"> Add Listing</span></button>
                     </div>
                     <h5 class="">Your Listings</h5>
@@ -71,24 +66,28 @@
                             <td>{{list.listingTitle}}</td>
                             <td>{{list.listingDescription}}</td>
                             <td>
-                                <button class="btn btn-sm btn-default" md-tooltip="Edit Listing" (click)="openUpdateListingDialog(list)">
+                                <button class="btn btn-sm btn-default" md-tooltip="Edit Listing"
+                                        (click)="openUpdateListingDialog(list)">
                                     <span
-                                        class="fa fa-pencil"></span>
+                                            class="fa fa-pencil"></span>
                                 </button>
                                 <button *ngIf="list.listingEnabled" md-tooltip="Disable Listing" class="btn btn-default"
                                         (click)="openDisableListingDialog(list)">
                                      <span
                                              class="fa fa-ban"></span>
                                 </button>
-                                <button *ngIf="!list.listingEnabled" md-tooltip="Enable Listing" class="btn btn-sm  btn-info"
+                                <button *ngIf="!list.listingEnabled" md-tooltip="Enable Listing"
+                                        class="btn btn-sm  btn-info"
                                         (click)="openDisableListingDialog(list)">
                                     <span
                                             class="fa fa-ban"></span>
                                 </button>
-                                <button class="btn btn-sm btn-default" md-tooltip="View Listing" (click)="openViewListingPage(list)">     <span
+                                <button class="btn btn-sm btn-default" md-tooltip="View Listing"
+                                        (click)="openViewListingPage(list)">     <span
                                         class="fa fa-eye"></span>
                                 </button>
-                                <button class="btn btn-sm btn-danger" md-tooltip="Delete Listing" (click)="openDeleteListingDialog(list)">
+                                <button class="btn btn-sm btn-danger" md-tooltip="Delete Listing"
+                                        (click)="openDeleteListingDialog(list)">
                                     <span
                                             class="fa fa-trash"></span>
                                 </button>
