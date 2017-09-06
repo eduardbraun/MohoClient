@@ -52,12 +52,11 @@ export class ProfileComponent implements OnInit {
                 this.token = JSON.parse(localStorage.getItem('currentUser'));
                 this.busy2 = this.listingService.createNewListing(result)
                     .subscribe(
-                        listings => this.lists = listings[''],
+                        listings =>  this.getAllListingsForUser(),
                         error =>{
                             this.alertService.error(error);
                         },
                         () =>{
-                            this.getAllListingsForUser();
                             this.alertService.success("Successfully added new Listing!");
                         }
                     )
