@@ -29,9 +29,12 @@ export class ViewListingComponent implements OnInit {
     listingDate : any;
     updatedListingDate : any;
     errorMessage: string;
-    toggleFilterEnabled: boolean = false;
+
+
     ngOnInit() {
+
     }
+
 
     // The subscribes to the getPosts stream from the PostService
     getListingForId(id: any) {
