@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="83288690-bb6d-49f9-a5c9-8f1c50ff5cf0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/profile/profile.component.ts" afterPath="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/listings/viewListing.component.html" afterPath="$PROJECT_DIR$/src/app/listings/viewListing.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/profile/updateListing.component.html" afterPath="$PROJECT_DIR$/src/app/profile/updateListing.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/register/register.component.html" afterPath="$PROJECT_DIR$/src/app/register/register.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,54 +19,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="profile.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
+      <file leaf-file-name="viewListing.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/listings/viewListing.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="234" column="40" lean-forward="false" selection-start-line="234" selection-start-column="40" selection-end-line="234" selection-end-column="40" />
+            <state relative-caret-position="557">
+              <caret line="106" column="22" lean-forward="true" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
               <folding>
-                <element signature="e#0#81#0" expanded="true" />
-                <element signature="n#!!block;n#openAddListingDialog#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#openDisableListingDialog#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#openDeleteListingDialog#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#openUpdateListingDialog#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#openChangeProfilePictureDialog#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getAllListingsForUser#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getUserProfile#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getFilterOptions#0;n#ProfileComponent#0" expanded="false" />
-                <element signature="e#9229#9327#0" expanded="false" />
-                <element signature="n#AddListingDialog#0" expanded="false" />
-                <element signature="n#!!block;n#countryOptionsChanged#0;n#AddListingDialog#0" expanded="false" />
-                <element signature="n#!!block;n#provinceOptionsChanged#0;n#AddListingDialog#0" expanded="false" />
-                <element signature="n#!!block;n#cityOptionsChanged#0;n#AddListingDialog#0" expanded="false" />
-                <element signature="n#!!block;n#catagoryOptionsChanged#0;n#AddListingDialog#0" expanded="false" />
-                <element signature="e#11726#11830#0" expanded="false" />
-                <element signature="n#UpdateListingDialog#0" expanded="false" />
-                <element signature="e#14854#14962#0" expanded="false" />
-                <element signature="n#DisableListingDialog#0" expanded="false" />
-                <element signature="e#15882#15990#0" expanded="false" />
-                <element signature="n#DeleteListingDialog#0" expanded="false" />
+                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="e#2045#2051#0" expanded="true" />
+                <element signature="e#2068#2074#0" expanded="true" />
+                <element signature="e#2091#2097#0" expanded="true" />
+                <element signature="e#2455#2461#0" expanded="true" />
+                <element signature="e#2486#2492#0" expanded="true" />
+                <element signature="e#2517#2523#0" expanded="true" />
+                <element signature="e#2689#2695#0" expanded="true" />
+                <element signature="e#2720#2726#0" expanded="true" />
+                <element signature="e#2751#2757#0" expanded="true" />
+                <element signature="e#2921#2927#0" expanded="true" />
+                <element signature="e#2952#2958#0" expanded="true" />
+                <element signature="e#2983#2989#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addListing.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/profile/addListing.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="34" column="78" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="34" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updateListing.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/profile/updateListing.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -117,7 +91,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="ng:///AppModule/AddListingDialog.html" />
-        <option value="$PROJECT_DIR$/src/app/profile/updateListing.component.html" />
         <option value="$PROJECT_DIR$/src/app/_models/alert.ts" />
         <option value="$PROJECT_DIR$/src/app/_models/index.ts" />
         <option value="$PROJECT_DIR$/src/app/_directives/alert.component.html" />
@@ -133,14 +106,11 @@
         <option value="$PROJECT_DIR$/src/app/listings/listing.component.ts" />
         <option value="$PROJECT_DIR$/src/app/profile/addListing.component.html" />
         <option value="$PROJECT_DIR$/src/app/styles/app.css" />
-        <option value="$PROJECT_DIR$/src/app/listings/viewListing.component.ts" />
         <option value="$PROJECT_DIR$/src/app/listings/listing.component.html" />
         <option value="$PROJECT_DIR$/src/app/profile/changeProfilePictureDialog.html" />
-        <option value="$PROJECT_DIR$/src/app/listings/viewListing.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/src/app/register/register.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/register/register.component.html" />
         <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/src/app/_services/authentication.service.ts" />
         <option value="$PROJECT_DIR$/src/app/_services/listing.service.ts" />
@@ -148,6 +118,10 @@
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.html" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/profile/updateListing.component.html" />
+        <option value="$PROJECT_DIR$/src/app/register/register.component.html" />
+        <option value="$PROJECT_DIR$/src/app/listings/viewListing.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/listings/viewListing.component.html" />
       </list>
     </option>
   </component>
@@ -206,21 +180,7 @@
               <item name="MohoClient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="_services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MohoClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MohoClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MohoClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MohoClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="listings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MohoClient" type="b2602c69:ProjectViewProjectNode" />
@@ -315,7 +275,7 @@
       <workItem from="1504230241513" duration="6359000" />
       <workItem from="1504237739592" duration="1220000" />
       <workItem from="1504285916236" duration="21270000" />
-      <workItem from="1504490438111" duration="35682000" />
+      <workItem from="1504490438111" duration="37179000" />
     </task>
     <task id="LOCAL-00001" summary="added auth for the web api">
       <created>1503512797870</created>
@@ -534,11 +494,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504665695630</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="SKILLZ-8 - javascript will now check if upload is an image for changing profile image">
+      <created>1504666262009</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1504666262009</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158882000" />
+    <option name="totallyTimeSpent" value="160379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -547,10 +514,11 @@
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20208333" sideWeight="0.49441788" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40628386" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1796875" sideWeight="0.50558215" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50108695" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50108695" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32717392" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -597,7 +565,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added nav bar and routes to it" />
     <MESSAGE value="added user component" />
     <MESSAGE value="Get request is now working added addlistingdto and new routes that display new data" />
     <MESSAGE value="add dialog to add new listings can now get token from local storage" />
@@ -622,7 +589,8 @@
     <MESSAGE value="added api domain" />
     <MESSAGE value="SKILZZ-11 adjust buttons on profile page" />
     <MESSAGE value="SKILLZ-12 - fixed issue where adding listing is giving errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="SKILLZ-12 - fixed issue where adding listing is giving errors" />
+    <MESSAGE value="SKILLZ-8 - javascript will now check if upload is an image for changing profile image" />
+    <option name="LAST_COMMIT_MESSAGE" value="SKILLZ-8 - javascript will now check if upload is an image for changing profile image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -869,16 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/listings/viewListing.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="64" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="64" />
-          <folding>
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@angular/cli/blueprints/ng/files/angular-cli.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -907,14 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/listings/viewListing.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/register/register.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -929,14 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/register/register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1029,9 +971,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/profile/addListing.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="59" column="10" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="59" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/profile/updateListing.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/register/register.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="138">
           <caret line="234" column="40" lean-forward="false" selection-start-line="234" selection-start-column="40" selection-end-line="234" selection-end-column="40" />
           <folding>
             <element signature="e#0#81#0" expanded="true" />
@@ -1059,19 +1025,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/profile/addListing.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/listings/viewListing.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="34" column="78" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="34" selection-end-column="78" />
+        <state relative-caret-position="836">
+          <caret line="48" column="97" lean-forward="false" selection-start-line="48" selection-start-column="97" selection-end-line="48" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/profile/updateListing.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/listings/viewListing.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="557">
+          <caret line="106" column="22" lean-forward="true" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+          <folding>
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#2045#2051#0" expanded="true" />
+            <element signature="e#2068#2074#0" expanded="true" />
+            <element signature="e#2091#2097#0" expanded="true" />
+            <element signature="e#2455#2461#0" expanded="true" />
+            <element signature="e#2486#2492#0" expanded="true" />
+            <element signature="e#2517#2523#0" expanded="true" />
+            <element signature="e#2689#2695#0" expanded="true" />
+            <element signature="e#2720#2726#0" expanded="true" />
+            <element signature="e#2751#2757#0" expanded="true" />
+            <element signature="e#2921#2927#0" expanded="true" />
+            <element signature="e#2952#2958#0" expanded="true" />
+            <element signature="e#2983#2989#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

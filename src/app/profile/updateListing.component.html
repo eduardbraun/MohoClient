@@ -1,25 +1,26 @@
 <h2 md-dialog-title>Update Listing</h2>
 <md-dialog-content>
-    <form name="form"  #f="ngForm" novalidate>
+    <form name="form" #f="ngForm" novalidate>
         <div class="form-group">
             <label for="">Listing Title</label>
             <input type="text" class="form-control" name="title" required [(ngModel)]="listing.ListingTitle"/>
         </div>
         <div class="form-group">
             <label for="">Listing Description</label>
-            <input type="text" class="form-control" name="description" required [(ngModel)]="listing.ListingDescription" />
+            <textarea rows="10" class="form-control" name="description" required
+                      [(ngModel)]="listing.ListingDescription"> </textarea>
         </div>
         <div class="form-group">
             <label for="">Address</label>
-            <input type="text" class="form-control" name="address" required [(ngModel)]="listing.Address" />
+            <input type="text" class="form-control" name="address" required [(ngModel)]="listing.Address"/>
         </div>
         <div class="form-group">
             <label for="">Email</label>
-            <input type="text" class="form-control" name="email" [(ngModel)]="listing.Email" />
+            <input type="text" class="form-control" name="email" [(ngModel)]="listing.Email"/>
         </div>
         <div class="form-group">
             <label for="">Fullname</label>
-            <input type="text" class="form-control" name="fullname"[(ngModel)]="listing.FullName" />
+            <input type="text" class="form-control" name="fullname" [(ngModel)]="listing.FullName"/>
         </div>
         <div class="form-group">
             <label for="">Phone</label>
@@ -29,7 +30,8 @@
 </md-dialog-content>
 
 <md-dialog-actions>
-    <button md-button md-dialog-close>Cancel</button>
-    <!-- Can optionally provide a result for the closing dialog. -->
-    <button md-button (click)="saveDialog()">Save</button>
+    <div class="form-actions">
+        <button class="btn btn-primary" (click)="saveDialog()">Confirm</button>
+        <button class="btn btn-default" md-dialog-close>Cancel</button>
+    </div>
 </md-dialog-actions>
