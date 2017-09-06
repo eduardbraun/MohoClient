@@ -22,8 +22,10 @@
                                         <div class="form-group">
                                             <label for="listingTypes" class="control-label">Catagory</label>
                                             <select class="form-control" [(ngModel)]="selectedListing"
-                                                    (change)="catagoryOptionsChanged()" name="country" id="listingTypes">
-                                                <option *ngFor="let c of listings" [value]="c | json">{{c.listingFilterName}}
+                                                    (change)="catagoryOptionsChanged()" name="country"
+                                                    id="listingTypes">
+                                                <option *ngFor="let c of listings" [value]="c | json">
+                                                    {{c.listingFilterName}}
                                                 </option>
                                             </select>
                                         </div>
@@ -43,7 +45,8 @@
                                             <label for="province" class="control-label">Province</label>
                                             <select class="form-control" [(ngModel)]="selectedProvince"
                                                     (change)="provinceOptionsChanged()" name="province" id="province">
-                                                <option *ngFor="let c of provinces" [value]="c | json">{{c.provinceName}}
+                                                <option *ngFor="let c of provinces" [value]="c | json">
+                                                    {{c.provinceName}}
                                                 </option>
                                             </select>
                                         </div>
@@ -54,7 +57,8 @@
                                             <select class="form-control" [(ngModel)]="selectedCity"
                                                     (change)="cityOptionsChanged()"
                                                     name="city" id="city">
-                                                <option *ngFor="let c of cities" [value]="c | json">{{c.cityName}}</option>
+                                                <option *ngFor="let c of cities" [value]="c | json">{{c.cityName}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -62,23 +66,31 @@
                             </div>
                             <div class="col-md-2 pull-right">
                                 <div class="form-group">
-                                    <label for="search" class="control-label"></label>
-                                    <button class="btn btn-primary form-control" name="search" id="search">
-                                        Search
-                                    </button>
+                                    <div class="row">
+                                        <div class="col-md-6"><label for="search" class="control-label"></label>
+                                            <button class="btn btn-primary form-control" name="search"
+                                                    (click)="searchListings()" id="search">
+                                                Search
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6"><label for="clear" class="control-label"></label>
+                                            <button class="btn btn-default form-control" name="clear"
+                                                    (click)="clearSearchFilters()" id="clear">
+                                                Clear
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </tr>
                     <tr>
-                        <th>#</th>
                         <th>Category</th>
                         <th>Title</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr *ngFor="let list of lists; let i = index">
-                        <td>{{i}}</td>
                         <td>{{list.listingType}}</td>
                         <td>{{list.listingTitle}}</td>
                         <td>

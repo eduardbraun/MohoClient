@@ -8,7 +8,6 @@ import {HttpHeaders} from "@angular/common/http";
 export class AuthenticationService {
     constructor(private http: Http) { }
     // private baseUrl = 'http://192.168.100.103:81';
-
     private baseUrl = 'https://www.skillzas.tk';
     @Output() getUserInfo: EventEmitter<any> = new EventEmitter();
 

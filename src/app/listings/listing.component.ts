@@ -15,7 +15,7 @@ import {AlertService} from "../_services/alert.service";
     templateUrl: 'listing.component.html',
 })
 export class ListingComponent implements OnInit {
-    constructor( private router: Router, private listingService: ListingService, public dialog: MdDialog, private alertService: AlertService){
+    constructor( private router: Router, private listingService: ListingService, public dialog: MdDialog, public alertService: AlertService){
 
     }
     busy: Subscription;
@@ -104,6 +104,48 @@ export class ListingComponent implements OnInit {
             .subscribe(
                 listings => this.lists = listings['listingsCollection'],
                 error => this.errorMessage = error
+            )
+    }
+
+    clearSearchFilters(){
+        this.citySelectionEnabled = false;
+        this.provinceSelectionEnabled = false;
+        this.SelectedCityViewModel = null;
+        this.SelectedProvinceViewModel = null;
+        this.SelectedCountryViewModel = null;
+        this.SelectedListingViewModel = null;
+    }
+
+    searchListings(){
+        let model: any = {};
+        if(this.SelectedListingViewModel){
+            model.FilterType = this.SelectedListingViewModel.listingType;
+        }else{
+            model.FilterType = null;
+        }
+        if(this.SelectedListingViewModel){
+            model.CountryType = this.SelectedCountryViewModel.countryType;
+        }else{
+            model.CountryType = null;
+        }
+        if(this.SelectedListingViewModel){
+            model.ProvinceType = this.SelectedProvinceViewModel.provinceType;
+        }else{
+            model.ProvinceType = null
+        }
+        if(this.SelectedListingViewModel){
+            model.CityType = this.SelectedCityViewModel.cityType;
+        }else{
+            model.CityType = null
+        }
+
+        this.busy = this.listingService.searchListings(model)
+            .subscribe(
+                listings => this.lists = listings['listingsCollection'],
+                error => this.errorMessage = error,
+                ()=>{
+                    this.alertService.success("Search has completed!")
+                }
             )
     }
 }
