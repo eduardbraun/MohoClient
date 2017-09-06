@@ -6,8 +6,8 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class UserService {
     constructor(private http: Http) { }
-    private baseUrl = 'http://192.168.100.103:81';
-    // private baseUrl = 'http://108.59.84.13';
+    // private baseUrl = 'http://192.168.100.103:81';
+    private baseUrl = 'https://www.skillzas.tk';
     private getUserProfileSettingsUrl = this.baseUrl+'/api/user/getprofileforusersettings';
     private changeProfileImageUrl = this.baseUrl+'/api/user/changeProfile';
     create(user: User) {
