@@ -32,6 +32,7 @@ export class ProfileComponent implements OnInit {
     data : any = {};
     token: any = {};
     filteroptions :any = {};
+    reviews: any = {};
 
     ngOnInit() {
         this.getUserProfile();
@@ -202,6 +203,7 @@ export class ProfileComponent implements OnInit {
                 ()=>{
                     this.lists = this.data['userListingCollectionDto'];
                     this.profile = this.data['userProfileDto'];
+                    this.reviews = this.data['userProfileReviewList'];
                 }
             )
     }

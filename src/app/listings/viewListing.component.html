@@ -23,14 +23,16 @@
                     </div>
                 </div>
                 <div class="span3 well">
-                    <a href="#aboutModal" data-toggle="modal" data-target="#myModal">
+                    <a [routerLink]="['../../user', profile.userId]">
                         <img *ngIf="profile.avatarImage != null" [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
                              height="140" class="img-circle"/>
                         <img *ngIf="profile.avatarImage == null" src="../../assets/images/default_profile.png" name="aboutme" width="140"
                              height="140" class="img-circle"/>
                     </a>
-                        <h3>{{profile.firstName}} {{profile.lastName}}</h3>
-                        <span class="badge badge-primary">{{profile.upVote}}</span>
+                        <h3>{{profile.firstName}} {{profile.lastName}}<span class="badge badge-primary">  {{profile.upVote}}</span> </h3>
+                        <div *ngIf="list.phoneNumber != null"><label> Phone: </label> {{list.phoneNumber}}</div>
+                        <div *ngIf="list.address != null"><label> Address: </label> {{list.address}}</div>
+                        <div *ngIf="list.email != null"><label> Email: </label> {{list.email}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-1">
@@ -46,22 +48,7 @@
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                <div class="row">
 
-                    <div class="col-md-1">
-                        <label>Contact:</label>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md3 form-group"><label>Name:</label> {{list.fullName}}</div>
-                            <div class="col-md3 form-group"><label>Phone:</label> {{list.phoneNumber}}</div>
-                            <div class="col-md3 form-group"><label>Address:</label> {{list.address}}</div>
-                            <div class="col-md3 form-group"><label>Email:</label> {{list.email}}</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-md-1">
 

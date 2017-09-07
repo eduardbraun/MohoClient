@@ -10,12 +10,12 @@ import {ViewListingComponent} from "./listings/viewListing.component";
 
 const appRoutes: Routes = [
     { path: '', component: ListingComponent, canActivate: [AuthGuard] },
-    { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'listings', component: ListingComponent },
     { path: 'listing/:id', component: ViewListingComponent },
+    { path: 'user/:id', component: UserComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
