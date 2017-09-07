@@ -4,7 +4,7 @@
         <div class="col-md-3">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h5 class="">Listing Options</h5>
+                    <h5 class="">Profile</h5>
                 </div>
                 <div class="panel-body">
                     <div class="span3 well">
@@ -18,7 +18,7 @@
                                      height="140" class="img-circle"/>
                             </a>
                                 <h3>{{profile.firstName}} {{profile.lastName}}</h3>
-                                <span class="badge badge-primary">+10</span></div>
+                                <span class="badge badge-primary">+{{profile.upVote}}</span></div>
                             <div class="col-md-6 form-group">
                                 <div *ngIf="profile.userName != null"><label> Username: </label> {{profile.userName}}
                                 </div>
@@ -95,6 +95,20 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-footer">
+                        Reviews
+                    </div>
+                    <div class="panel-body">
+                        Reviews
+                    </div>
                 </div>
             </div>
         </div>
