@@ -44,10 +44,10 @@
                         </thead>
                         <tbody>
                         <tr *ngFor="let list of lists.listingsCollection; let i = index">
-                            <td>{{list.listingType}}</td>
-                            <td>{{list.listingTitle}}</td>
-                            <td>{{list.listingDescription}}</td>
-                            <td>
+                            <td class="col-md-3">{{list.listingType}}</td>
+                            <td class="col-md-3">{{list.listingTitle}}</td>
+                            <td class="col-md-5">{{list.listingDescription}}</td>
+                            <td class="col-md-1">
                                 <button class="btn btn-sm btn-default" md-tooltip="View Listing"
                                         (click)="openViewListingPage(list)">
                                     <span class="fa fa-eye"></span>
@@ -60,15 +60,77 @@
             </div>
         </div>
     </div>
-    <div class="container" *ngIf="this.reviews.length > 0">
+    <div class="container"> <!---->
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-primary">
-                    <div class="panel-footer">
-                        Reviews
+                <div class="panel panel-default">
+                    <div class="panel-body" *ngIf="reviews.length > 0">
+                        <table class="table">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let review of reviews;">
+                                <td class="col-md-3">Mark</td>
+                                <td class="col-md-6">Otto</td>
+                                <td class="col-md-3">@mdo</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table class="table">
+                            <thead class="thead-default">
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="panel-body">
-                        Reviews
+                    <div class="panel-body" *ngIf="this.reviews.length <= 0">
+                        <small class="text-center">Be the first one to review</small>
+                    </div>
+                    <div class="panel-footer">
+
+                        <input id="rating-hidden" name="rating" type="hidden">
+                        <textarea class="form-control animated" cols="50" id="new-review"
+                                  name="comment" placeholder="Enter your review here..."
+                                  rows="5"></textarea>
+
+                        <div class="text-right">
+                            <div class="stars" data-rating="0"></div>
+                            <a class="btn btn-danger btn-sm"
+                               style="margin-right: 10px;">
+                                <span class="fa fa-minus-circle"></span> Cancel</a>
+                            <button class="btn btn-success btn-lg" type="submit">Review</button>
+                        </div>
                     </div>
                 </div>
             </div>

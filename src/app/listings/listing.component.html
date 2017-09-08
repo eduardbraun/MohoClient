@@ -86,9 +86,9 @@
                     </thead>
                     <tbody>
                     <tr *ngFor="let list of lists; let i = index">
-                        <td>{{list.listingType}}</td>
-                        <td>{{list.listingTitle}}</td>
-                        <td>
+                        <td class="col-md-3">{{list.listingType}}</td>
+                        <td class="col-md-7">{{list.listingTitle}}</td>
+                        <td class="col-md-2">
                             <button class="btn btn-info" (click)="openViewListingPage(list)"> View</button>
                         </td>
                     </tr>

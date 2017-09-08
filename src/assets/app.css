@@ -5,12 +5,6 @@
 .help-block {
     font-size: 12px;
 }
-
-body, html {
-    height: 100%;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(#f7f4f5,#e0dedf);
-}
 /**
  * Profile image component
  */
@@ -33,6 +27,18 @@ body, html {
     margin-top: 43px;
 }
 
+.animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.stars
+{
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d17581;
+}
 /**
  * Ranking component
  */

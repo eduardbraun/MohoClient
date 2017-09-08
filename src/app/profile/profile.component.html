@@ -58,10 +58,10 @@
                         </thead>
                         <tbody>
                         <tr *ngFor="let list of lists.listingsCollection; let i = index">
-                            <td>{{list.listingType}}</td>
-                            <td>{{list.listingTitle}}</td>
-                            <td>{{list.listingDescription}}</td>
-                            <td>
+                            <td class="col-md-2">{{list.listingType}}</td>
+                            <td class="col-md-3">{{list.listingTitle}}</td>
+                            <td class="col-md-6">{{list.listingDescription}}</td>
+                            <td class="col-md-1">
                                 <button class="btn btn-sm btn-default" md-tooltip="Edit Listing"
                                         (click)="openUpdateListingDialog(list)">
                                     <span
