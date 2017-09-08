@@ -26,6 +26,7 @@ import {
 import {ListingComponent} from "./listings/listing.component";
 import {BusyModule} from "angular2-busy";
 import {ViewListingComponent} from "./listings/viewListing.component";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
     imports: [
@@ -61,6 +62,7 @@ import {ViewListingComponent} from "./listings/viewListing.component";
         ChangeProfilePictureDialog
     ],
     providers: [
+        {provide: LocationStrategy, useClass: HashLocationStrategy},
         AuthGuard,
         AlertService,
         AuthenticationService,

@@ -1,0 +1,3 @@
+npm run build //to build amgular 4 app
+npm run build --prod --no-aot
+gcloud app deploy // to deploy to google cloud

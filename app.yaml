@@ -21,7 +21,6 @@ skip_files:
 - \.gitignore
 - ^\.git$
 - ^grunt\.js
-- ^src$
 - ^e2e$
 - \.editorconfig
 - ^karma\.config\.js
