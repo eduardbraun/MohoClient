@@ -114,22 +114,23 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="panel-body" *ngIf="this.reviews.length <= 0">
+                    <div class="panel-body text-center" *ngIf="this.reviews.length <= 0">
                         <small class="text-center">Be the first one to review</small>
                     </div>
-                    <div class="panel-footer">
-
+                    <div class="panel-footer" >
+                        <rating [(ngModel)]="starsCount"></rating>
+                        <input class="form-control" placeholder="Title" [(ngModel)]="reviewTitle">
+                        <div class="help-block">Title is Required</div>
                         <input id="rating-hidden" name="rating" type="hidden">
                         <textarea class="form-control animated" cols="50" id="new-review"
                                   name="comment" placeholder="Enter your review here..."
-                                  rows="5"></textarea>
-
+                                  rows="5" [(ngModel)]="reviewDescription"></textarea>
                         <div class="text-right">
                             <div class="stars" data-rating="0"></div>
-                            <a class="btn btn-danger btn-sm"
-                               style="margin-right: 10px;">
-                                <span class="fa fa-minus-circle"></span> Cancel</a>
-                            <button class="btn btn-success btn-lg" type="submit">Review</button>
+                            <button class="btn btn-danger btn-sm"
+                               style="margin-right: 10px;" [(disabled)]="!authGuard.userLogedin">
+                                <span class="fa fa-minus-circle"></span> Cancel</button>
+                            <button class="btn btn-success btn-lg" type="submit" [(disabled)]="!authGuard.userLogedin" (click)="saveReview()">Review</button>
                         </div>
                     </div>
                 </div>

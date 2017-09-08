@@ -16,18 +16,24 @@ import {AuthGuard} from "../_guards/auth.guard";
 export class UserComponent {
     constructor(private route: ActivatedRoute, private userService : UserService,
                 private listingService: ListingService, public dialog: MdDialog,
-                private alertService: AlertService, private router: Router){
+                private alertService: AlertService, private router: Router,
+                private authGuard: AuthGuard){
         this.route.params.subscribe( params =>{
             console.log(params);
+            this.userId = params['id'];
             this.getProfileForUser(params['id'])
         });
     }
-
+    userId : string;
     data: any = {};
     lists: any = {};
     profile: any = {};
     reviews: any = {};
     busy: Subscription;
+    reviewDescription : string;
+    reviewTitle : string;
+    starsCount: number;
+    starsCounts: number[] = [];
 
     openViewListingPage(listing: any){
         this.router.navigate(['listing', listing.userListingId]);
@@ -47,4 +53,31 @@ export class UserComponent {
     }
     model: any = {};
 
+    saveReview(){
+        if(this.authGuard.userLogedin){
+            if(this.reviewTitle == "" || this.reviewTitle == null){
+                this.alertService.error("Please leave a title for the review");
+            }
+
+            var review : any = {};
+
+            review.ownerId = this.profile.userId;
+            review.reviewTitle = this.reviewTitle;
+            review.reviewDescription = this.reviewDescription;
+            review.upVotePoints = this.starsCount;
+
+            console.log('upvotes', this.starsCount);
+
+            this.busy = this.userService.postReviewForUser(review)
+                .subscribe(
+                    listings => this.getProfileForUser(this.userId),
+                    error => this.alertService.error("An error occurred while saving the review."),
+                    ()=>{
+                        this.alertService.success("Review Saved. Thank You!")
+                    }
+                )
+        }else{
+            this.alertService.error("Please LogIn or Register to write a review");
+        }
+    }
 }

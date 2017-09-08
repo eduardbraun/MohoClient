@@ -8,11 +8,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 import {Listing} from "../_models/listing";
 import {AddListing} from "../_models/addListingDto";
+import {ApiConfig} from "../_app_config/apiConfig";
 
 @Injectable()
 export class ListingService {
     // private baseUrl = 'http://192.168.100.103:81';
-    private baseUrl = 'https://www.skillzas.tk';
+    private baseUrl = ApiConfig.ApiUrl;
     private getAllListingUrl =  this.baseUrl+'/api/listing/getalllisting';
     private getFilterOptionsUrl = this.baseUrl+'/api/listing/getfilteroptions';
     private getAllListingForUserUrl = this.baseUrl+'/api/listing/getalllistingforuser';

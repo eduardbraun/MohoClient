@@ -2,6 +2,7 @@
 import {Http, Headers, RequestOptions, Response} from '@angular/http';
 import {User} from '../_models/index';
 import {Observable} from "rxjs/Observable";
+import {ApiConfig} from '../_app_config/apiConfig';
 
 @Injectable()
 export class UserService {
@@ -9,10 +10,11 @@ export class UserService {
     }
 
     // private baseUrl = 'http://192.168.100.103:81';
-    private baseUrl = 'https://www.skillzas.tk';
+    private baseUrl = ApiConfig.ApiUrl;
     private getUserProfileSettingsUrl = this.baseUrl + '/api/user/getprofileforusersettings';
     private changeProfileImageUrl = this.baseUrl + '/api/user/changeProfile';
     private getProfileByUserIdUrl = this.baseUrl + '/api/user/id=';
+    private postReviewForUserUrl = this.baseUrl + '/api/user/givereviewforuser';
 
     create(user: User) {
         let headers = new Headers();
@@ -54,6 +56,18 @@ export class UserService {
         let body: any;
 
         return this.http.post(this.changeProfileImageUrl, file, options).catch(this.handleError);
+    }
+    postReviewForUser(data: any): Observable<any[]> {
+
+        let userInfo: any = this.getToken();
+        let token = userInfo.token;
+        let headers = new Headers();
+        headers.append("Authorization", 'Bearer ' + token);
+        headers.append("Accept", "application/json");
+        let options = new RequestOptions({headers: headers});
+        let body: any;
+
+        return this.http.post(this.postReviewForUserUrl, data, options).catch(this.handleError);
     }
 
     // private helper methods

@@ -3,12 +3,13 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import {HttpHeaders} from "@angular/common/http";
+import {ApiConfig} from "../_app_config/apiConfig";
 
 @Injectable()
 export class AuthenticationService {
     constructor(private http: Http) { }
     // private baseUrl = 'http://192.168.100.103:81';
-    private baseUrl = 'https://www.skillzas.tk';
+    private baseUrl = ApiConfig.ApiUrl;
     @Output() getUserInfo: EventEmitter<any> = new EventEmitter();
 
     login(email: string, password: string) {

@@ -27,6 +27,8 @@ import {ListingComponent} from "./listings/listing.component";
 import {BusyModule} from "angular2-busy";
 import {ViewListingComponent} from "./listings/viewListing.component";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {RatingModule} from "ngx-rating";
+import {ApiConfig} from './_app_config/apiConfig';
 
 @NgModule({
     imports: [
@@ -39,6 +41,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
         MdDialogModule,
         MdOptionModule,
         MdSelectModule,
+        RatingModule,
         MdTooltipModule,
         BusyModule,
         MdNativeDateModule,
