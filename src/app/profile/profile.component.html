@@ -103,7 +103,32 @@
                         Reviews
                     </div>
                     <div class="panel-body">
-                        Reviews
+                        <table class="table">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>Reviews</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let review of reviews;">
+                                <td>
+                                    <div class="form-group">
+                                        <rating [(ngModel)]="review.upVotes" iconClass="fa fa-star" emptyIcon=""
+                                                [disabled]="true"></rating>
+                                        <br>
+                                        <label>
+                                            <small>{{review.username}}</small>
+                                        </label>
+                                        <br>
+                                        <label>Title: </label> {{review.reviewTitle}}
+                                        <br>
+                                        <label>Description: </label> {{review.reviewDescription}}
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

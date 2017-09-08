@@ -33,6 +33,11 @@
     transition: height 0.2s;
 }
 
+span.rating.disabled .star-icon:before {
+    color: #f4bc42 !important;
+    text-shadow: none;
+}
+
 .stars
 {
     margin: 20px 0;
