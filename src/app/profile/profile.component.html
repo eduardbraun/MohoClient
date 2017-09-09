@@ -13,7 +13,7 @@
                                 <img *ngIf="profile.avatarImage != null"
                                      [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
                                      height="140" class="img-circle"/>
-                                <img *ngIf="profile.avatarImage == null" src="../../assets/images/default_profile.png"
+                                <img *ngIf="profile.avatarImage == null" src="./../../assets/images/default_profile.png"
                                      name="aboutme" width="140"
                                      height="140" class="img-circle"/>
                             </a>
@@ -113,12 +113,13 @@
                             <tr *ngFor="let review of reviews;">
                                 <td>
                                     <div class="form-group">
-                                        <rating [(ngModel)]="review.upVotes" iconClass="fa fa-star" emptyIcon=""
-                                                [disabled]="true"></rating>
+                                        <rating [(ngModel)]="review.upVotes" [max]="5" [disabled]="true"></rating>
                                         <br>
-                                        <label>
-                                            <small>{{review.username}}</small>
-                                        </label>
+                                        <a [routerLink]="['../../user', review.ownerRefId]">
+                                            <label>
+                                                <small>{{review.username}}</small>
+                                            </label>
+                                        </a>
                                         <br>
                                         <label>Title: </label> {{review.reviewTitle}}
                                         <br>

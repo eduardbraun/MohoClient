@@ -54,6 +54,10 @@ export class ListingComponent implements OnInit {
                 ()=>{
                     this.countries = this.filterOptions.countryList;
                     this.listings = this.filterOptions.listingTypes;
+
+                    this.selectedListing = this.listings[0];
+
+                    console.log('op' , this.selectedListing);
                 }
             )
     }
@@ -103,7 +107,8 @@ export class ListingComponent implements OnInit {
        this.busy = this.listingService.getAllListings()
             .subscribe(
                 listings => this.lists = listings['listingsCollection'],
-                error => this.errorMessage = error
+                error => this.errorMessage = error,
+                ()=>{}
             )
     }
 

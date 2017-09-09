@@ -14,21 +14,19 @@
                 <div [ngBusy]="busy"></div>
                 <div class="filters" *ngIf="toggleFilterEnabled">
                     <div class="row">
-                        <div class="col-md-10 well well-sm">
+                        <div class="col-md-10 ">
                             <div class="row">
-                                <div class="col-md-3">
+                                <form class="form-inline">
                                     <div class="form-group">
-                                        <label for="listingTypes" class="control-label">Catagory</label>
+                                        <label for="listingTypes" class="control-label" style="padding-left: 15px;">  Catagory</label>
                                         <select class="form-control" [(ngModel)]="selectedListing"
-                                                (change)="catagoryOptionsChanged()" name="country"
+                                                (change)="catagoryOptionsChanged()" name="listingTypes"
                                                 id="listingTypes">
-                                            <option *ngFor="let c of listings" [value]="c | json">
+                                            <option *ngFor="let c of listings;let i = index" [selected]="i == 0" [value]="c | json">
                                                 {{c.listingFilterName}}
                                             </option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="country" class="control-label">Country</label>
                                         <select class="form-control" [(ngModel)]="selectedCountry"
@@ -37,9 +35,7 @@
                                             </option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-md-3" *ngIf="provinceSelectionEnabled">
-                                    <div class="form-group">
+                                    <div class="form-group" *ngIf="provinceSelectionEnabled">
                                         <label for="province" class="control-label">Province</label>
                                         <select class="form-control" [(ngModel)]="selectedProvince"
                                                 (change)="provinceOptionsChanged()" name="province" id="province">
@@ -48,9 +44,7 @@
                                             </option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-md-3" *ngIf="citySelectionEnabled">
-                                    <div class="form-group">
+                                    <div class="form-group" *ngIf="citySelectionEnabled">
                                         <label for="city" class="control-label">Region</label>
                                         <select class="form-control" [(ngModel)]="selectedCity"
                                                 (change)="cityOptionsChanged()"
@@ -59,7 +53,7 @@
                                             </option>
                                         </select>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="col-md-2 pull-right ">
