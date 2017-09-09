@@ -5,7 +5,7 @@ import {User} from "../_models/user";
 export class AuthGuard implements CanActivate {
 
     constructor(private router: Router) { }
-    _user: User[] = [];
+    _user: any = {};
     userLogedin: boolean = false;
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         if (localStorage.getItem('currentUser')) {
@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
         }
 
         // not logged in so redirect to login page with the return url
-        this._user = [];
+        this._user = {};
         this.userLogedin = false;
         this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
         return false;
