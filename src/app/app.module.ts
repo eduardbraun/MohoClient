@@ -16,7 +16,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import { ProfileComponent } from './profile/index';
 import {ListingService} from "./_services/listing.service";
 import {
-    MdButtonModule, MdDialog, MdDialogModule, MdInputModule,
+    MdButtonModule, MdCard, MdCardFooter, MdCardModule, MdDialog, MdDialogModule, MdInputModule,
     MdNativeDateModule, MdOptionModule, MdSelectModule, MdTooltipModule
 } from "@angular/material";
 import {
@@ -42,6 +42,7 @@ import {ApiConfig} from './_app_config/apiConfig';
         MdOptionModule,
         MdSelectModule,
         RatingModule,
+        MdCardModule,
         MdTooltipModule,
         BusyModule,
         MdNativeDateModule,

@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="span3 well">
-                    <a [routerLink]="['../../user', profile.userId]">
+                    <a [routerLink]="['./../user', profile.userId]">
                         <img *ngIf="profile.avatarImage != null" [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
                              height="140" class="img-circle"/>
                         <img *ngIf="profile.avatarImage == null" src="../../assets/images/default_profile.png" name="aboutme" width="140"

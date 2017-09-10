@@ -27,6 +27,11 @@
     margin-top: 43px;
 }
 
+.example-header-image {
+    background-image:url('../assets/images/empty-add-icon.png');
+    background-size: cover; width: 40px;
+}
+
 .animated {
     -webkit-transition: height 0.2s;
     -moz-transition: height 0.2s;

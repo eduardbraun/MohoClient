@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MdButtonModule, MdDialog, MdDialogRef} from '@angular/material';
 import {Listing} from "../_models/listing";
 import {Pipe, PipeTransform} from '@angular/core';
@@ -12,32 +12,33 @@ import {AlertService} from "../_services/alert.service";
 
 @Component({
     moduleId: module.id.toString(),
-    templateUrl: 'listing.component.html',
+    templateUrl: 'listing.component.html'
 })
 export class ListingComponent implements OnInit {
-    constructor( private router: Router, private listingService: ListingService, public dialog: MdDialog, public alertService: AlertService){
+    constructor(private router: Router, private listingService: ListingService, public dialog: MdDialog, public alertService: AlertService) {
 
     }
+
     busy: Subscription;
     results: any;
     errorMessage: string;
-    lists : Listing[];
+    lists: Listing[];
     toggleFilterEnabled: boolean = false;
-    listings : any = {};
-    countries : any = {};
+    listings: any = {};
+    countries: any = {};
     provinces: any = {};
     cities: any = {};
     selectedListing: any;
-    SelectedListingViewModel : any;
+    SelectedListingViewModel: any;
     selectedCountry: any = {};
     SelectedCountryViewModel: any = {};
     selectedProvince: any = {};
     SelectedProvinceViewModel: any = {};
-    selectedCity : any ={};
+    selectedCity: any = {};
     SelectedCityViewModel: any = {};
     provinceSelectionEnabled: boolean = false;
     citySelectionEnabled: boolean = false;
-    filterOptions : any;
+    filterOptions: any;
 
     ngOnInit() {
         this.getAllListings();
@@ -51,68 +52,71 @@ export class ListingComponent implements OnInit {
                 error => {
                     this.alertService.error("Error getting filters");
                 },
-                ()=>{
+                () => {
                     this.countries = this.filterOptions.countryList;
                     this.listings = this.filterOptions.listingTypes;
-
                     this.selectedListing = this.listings[0];
-
-                    console.log('op' , this.selectedListing);
                 }
             )
     }
-    countryOptionsChanged(){
+
+    countryOptionsChanged() {
         let as = JSON.parse(this.selectedCountry);
         this.SelectedCountryViewModel = as;
 
-        if(this.SelectedCountryViewModel != null){
+        if (this.SelectedCountryViewModel != null) {
             this.provinceSelectionEnabled = true;
             this.citySelectionEnabled = false;
             this.cities = {};
             this.provinces = this.SelectedCountryViewModel.provinces;
         }
     }
-    provinceOptionsChanged(){
+
+    provinceOptionsChanged() {
         let as = JSON.parse(this.selectedProvince);
         this.SelectedProvinceViewModel = as;
 
-        if(this.SelectedProvinceViewModel != null){
+        if (this.SelectedProvinceViewModel != null) {
             this.citySelectionEnabled = true;
             this.cities = this.SelectedProvinceViewModel.cities;
         }
     }
-    cityOptionsChanged(){
+
+    cityOptionsChanged() {
         let as = JSON.parse(this.selectedCity);
         this.SelectedCityViewModel = as;
     }
-    catagoryOptionsChanged(){
+
+    catagoryOptionsChanged() {
         let as = JSON.parse(this.selectedListing);
         this.SelectedListingViewModel = as;
     }
 
-    openViewListingPage(listing: any){
+    openViewListingPage(listing: any) {
         this.router.navigate(['listing', listing.userListingId]);
     }
 
-    toggleFilter(){
-        if(this.toggleFilterEnabled == true){
+    toggleFilter() {
+        if (this.toggleFilterEnabled == true) {
             this.toggleFilterEnabled = false;
-        }else{
+        } else {
             this.toggleFilterEnabled = true;
         }
 
     }
+
     // The subscribes to the getPosts stream from the PostService
     getAllListings() {
-       this.busy = this.listingService.getAllListings()
+        this.busy = this.listingService.getAllListings()
             .subscribe(
                 listings => this.lists = listings['listingsCollection'],
                 error => this.errorMessage = error,
-                ()=>{}
+                () => {
+                }
             )
     }
 
-    clearSearchFilters(){
+    clearSearchFilters() {
         this.citySelectionEnabled = false;
         this.provinceSelectionEnabled = false;
         this.SelectedCityViewModel = null;
@@ -121,26 +125,26 @@ export class ListingComponent implements OnInit {
         this.SelectedListingViewModel = null;
     }
 
-    searchListings(){
+    searchListings() {
         let model: any = {};
-        if(this.SelectedListingViewModel){
+        if (this.SelectedListingViewModel) {
             model.FilterType = this.SelectedListingViewModel.listingType;
-        }else{
+        } else {
             model.FilterType = null;
         }
-        if(this.SelectedListingViewModel){
+        if (this.SelectedListingViewModel) {
             model.CountryType = this.SelectedCountryViewModel.countryType;
-        }else{
+        } else {
             model.CountryType = null;
         }
-        if(this.SelectedListingViewModel){
+        if (this.SelectedListingViewModel) {
             model.ProvinceType = this.SelectedProvinceViewModel.provinceType;
-        }else{
+        } else {
             model.ProvinceType = null
         }
-        if(this.SelectedListingViewModel){
+        if (this.SelectedListingViewModel) {
             model.CityType = this.SelectedCityViewModel.cityType;
-        }else{
+        } else {
             model.CityType = null
         }
 
@@ -148,7 +152,7 @@ export class ListingComponent implements OnInit {
             .subscribe(
                 listings => this.lists = listings['listingsCollection'],
                 error => this.errorMessage = error,
-                ()=>{
+                () => {
                     this.alertService.success("Search has completed!")
                 }
             )
