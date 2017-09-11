@@ -119,7 +119,7 @@ export class ListingComponent implements OnInit {
         this.busy = this.listingService.getAllListings()
             .subscribe(
                 listings => this.lists = listings['listingsCollection'],
-                error => this.errorMessage = error,
+                error =>this.alertService.error(error._body),
                 () => {
                 }
             )
@@ -160,7 +160,7 @@ export class ListingComponent implements OnInit {
         this.busy = this.listingService.searchListings(model)
             .subscribe(
                 listings => this.lists = listings['listingsCollection'],
-                error => this.errorMessage = error,
+                error => this.alertService.error(error._body),
                 () => {
                     this.alertService.success("Search has completed!")
                 }

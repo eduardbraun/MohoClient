@@ -55,7 +55,7 @@ export class ProfileComponent implements OnInit {
                     .subscribe(
                         listings =>  this.getAllListingsForUser(),
                         error =>{
-                            this.alertService.error(error);
+                            this.alertService.error(error._body);
                         },
                         () =>{
                             this.alertService.success("Successfully added new Listing!");
@@ -82,7 +82,7 @@ export class ProfileComponent implements OnInit {
                     .subscribe(
                         listings => this.data = listings ,
                         error =>{
-                            this.alertService.error(error);
+                            this.alertService.error(error._body);
                         },
                         () =>{
                             console.log('result for data is:', this.data);
@@ -116,7 +116,7 @@ export class ProfileComponent implements OnInit {
                     .subscribe(
                         listings => this.data = listings[''],
                         error =>{
-                            this.alertService.error(error);
+                            this.alertService.error(error._body);
                         },
                         () =>{
                             this.getAllListingsForUser();
@@ -145,7 +145,7 @@ export class ProfileComponent implements OnInit {
                         .subscribe(
                             listings =>  this.getAllListingsForUser(),
                             error =>{
-                                this.alertService.error(error);
+                                this.alertService.error(error._body);
                             },
                             () =>{
                                 this.alertService.success("Successfully updated Listing!");
@@ -170,7 +170,7 @@ export class ProfileComponent implements OnInit {
                     .subscribe(
                         profile => this.profile = JSON.parse(profile['_body']),
                         error =>{
-                            this.alertService.error(error);
+                            this.alertService.error(error._body);
                         },
                         () =>{
                             this.alertService.success("Successfully updated Profile Image!");
@@ -188,7 +188,7 @@ export class ProfileComponent implements OnInit {
         this.listingService.getAllListingsForUser()
             .subscribe(
                 listings => this.lists = listings['userListingCollectionDto'],
-                error => this.errorMessage = error,
+                error => this.alertService.error(error._body),
                 ()=>{
                   console.log("new get all", this.lists);
                 }
@@ -199,7 +199,7 @@ export class ProfileComponent implements OnInit {
         this.busy = this.userService.getUserProfileSettings()
             .subscribe(
                 listings => this.data = listings,
-                error => this.errorMessage = error,
+                error => this.alertService.error(error._body),
                 ()=>{
                     this.lists = this.data['userListingCollectionDto'];
                     this.profile = this.data['userProfileDto'];
@@ -212,7 +212,7 @@ export class ProfileComponent implements OnInit {
             .subscribe(
                 filters => this.filteroptions = filters,
                 error => {
-                    this.alertService.error(error);
+                    this.alertService.error(error._body);
                 }
             )
     }

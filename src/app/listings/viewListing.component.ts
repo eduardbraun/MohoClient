@@ -35,8 +35,6 @@ export class ViewListingComponent implements OnInit {
     ngOnInit() {
 
     }
-
-
     // The subscribes to the getPosts stream from the PostService
     getListingForId(id: any) {
         console.log("Param Id", id);

@@ -80,7 +80,6 @@ export class UserComponent implements OnInit {
     goToUser(userId: string){
 
     }
-
     model: any = {};
 
     saveReview() {
