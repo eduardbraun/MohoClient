@@ -9,13 +9,14 @@ import {ListingService} from "../_services/listing.service";
 import {Subscription} from "rxjs/Subscription";
 import {Router} from "@angular/router";
 import {AlertService} from "../_services/alert.service";
+import {AuthGuard} from "../_guards/auth.guard";
 
 @Component({
     moduleId: module.id.toString(),
     templateUrl: 'listing.component.html'
 })
 export class ListingComponent implements OnInit {
-    constructor(private router: Router, private listingService: ListingService, public dialog: MdDialog, public alertService: AlertService) {
+    constructor(private router: Router, private authGuard: AuthGuard, private listingService: ListingService, public dialog: MdDialog, public alertService: AlertService) {
 
     }
 
@@ -58,6 +59,14 @@ export class ListingComponent implements OnInit {
                     this.selectedListing = this.listings[0];
                 }
             )
+    }
+
+    onClickAddListing(){
+        if(this.authGuard.userLogedin){
+            this.router.navigate(['profile']);
+        }else{
+            this.alertService.warn("Please Login to Add a listing!");
+        }
     }
 
     countryOptionsChanged() {
