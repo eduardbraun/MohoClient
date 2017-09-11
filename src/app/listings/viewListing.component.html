@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="span3 well">
-                    <a [routerLink]="['./../user', profile.userId]">
+                    <a [routerLink]="['../../user', profile.userId]">
                         <img *ngIf="profile.avatarImage != null" [src]="'data:image/png;base64,'+profile.avatarImage" name="aboutme" width="140"
                              height="140" class="img-circle"/>
                         <img *ngIf="profile.avatarImage == null" src="../../assets/images/default_profile.png" name="aboutme" width="140"
@@ -44,23 +44,24 @@
                     <div class="col-md-3">
 
                     </div>
-                </div>
-                &nbsp;
-                &nbsp;
-                &nbsp;
+                </div>             &nbsp;
 
                 <div class="row">
-                    <div class="col-md-1">
-
-                    </div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-8">
-                        <div class="container">
-
+                        <label><small>Contact Freelancer</small></label>
+                        <input class="form-control" placeholder="Your Email">
+                        <div class="help-block">Email is Required</div>
+                        <textarea class="form-control animated" cols="50" id="new-review"
+                                  name="comment" placeholder="Your Message"
+                                  rows="5"></textarea>
+                        <div class="text-right">
+                            <button class="btn btn-success btn-lg" type="submit"
+                                    (click)="saveReview()">Send
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-3">
-
-                    </div>
+                    <div class="col-md-2"></div>
                 </div>
             </div>
             <div class="panel-footer">

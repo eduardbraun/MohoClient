@@ -9,13 +9,14 @@ import {ListingService} from "../_services/listing.service";
 import {Subscription} from "rxjs/Subscription";
 import {ActivatedRoute} from "@angular/router";
 import {AlertService} from "../_services/alert.service";
+import {AuthGuard} from "../_guards/auth.guard";
 
 @Component({
     moduleId: module.id.toString(),
     templateUrl: 'viewListing.component.html',
 })
 export class ViewListingComponent implements OnInit {
-    constructor(private route: ActivatedRoute, private listingService: ListingService, public dialog: MdDialog, private alertService: AlertService){
+    constructor(private route: ActivatedRoute, private authGuard: AuthGuard, private listingService: ListingService, public dialog: MdDialog, private alertService: AlertService){
         this.route.params.subscribe( params =>{
             console.log(params);
             this.getListingForId(params['id'])

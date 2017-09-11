@@ -9,66 +9,66 @@
                     </button>
                 </div>
                 <h4 class="panel-title">All Listings</h4>
-                <div class="filters" *ngIf="toggleFilterEnabled">
+            </div>
+        </div>
+        <div class="filters" *ngIf="toggleFilterEnabled">
+            <div class="row">
+                <div class="col-md-10 ">
                     <div class="row">
-                        <div class="col-md-10 ">
-                            <div class="row">
-                                <form class="form-inline">
-                                    <div class="form-group">
-                                        <label for="listingTypes" class="control-label" style="padding-left: 15px;">
-                                            Catagory</label>
-                                        <select class="form-control" [(ngModel)]="selectedListing"
-                                                (change)="catagoryOptionsChanged()" name="listingTypes"
-                                                id="listingTypes">
-                                            <option *ngFor="let c of listings;let i = index" [selected]="i == 0"
-                                                    [value]="c | json">
-                                                {{c.listingFilterName}}
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="country" class="control-label">Country</label>
-                                        <select class="form-control" [(ngModel)]="selectedCountry"
-                                                (change)="countryOptionsChanged()" name="country" id="country">
-                                            <option *ngFor="let c of countries" [value]="c | json">{{c.countryName}}
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group" *ngIf="provinceSelectionEnabled">
-                                        <label for="province" class="control-label">Province</label>
-                                        <select class="form-control" [(ngModel)]="selectedProvince"
-                                                (change)="provinceOptionsChanged()" name="province" id="province">
-                                            <option *ngFor="let c of provinces" [value]="c | json">
-                                                {{c.provinceName}}
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group" *ngIf="citySelectionEnabled">
-                                        <label for="city" class="control-label">Region</label>
-                                        <select class="form-control" [(ngModel)]="selectedCity"
-                                                (change)="cityOptionsChanged()"
-                                                name="city" id="city">
-                                            <option *ngFor="let c of cities" [value]="c | json">{{c.cityName}}
-                                            </option>
-                                        </select>
-                                    </div>
-                                </form>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="listingTypes" class="control-label" style="padding-left: 15px;">
+                                    Catagory</label>
+                                <select class="form-control" [(ngModel)]="selectedListing"
+                                        (change)="catagoryOptionsChanged()" name="listingTypes"
+                                        id="listingTypes">
+                                    <option *ngFor="let c of listings;let i = index" [selected]="i == 0"
+                                            [value]="c | json">
+                                        {{c.listingFilterName}}
+                                    </option>
+                                </select>
                             </div>
-                        </div>
-                        <div class="col-md-2 pull-right ">
-                            <div class="input-group-btn text-center">
-                                <button class="btn btn-primary" name="search"
-                                        (click)="searchListings()" id="search">
-                                    Search
-                                </button>
-                                <button class="btn btn-default" name="clear"
-                                        (click)="clearSearchFilters()" id="clear">
-                                    Clear
-                                </button>
+                            <div class="form-group">
+                                <label for="country" class="control-label">Country</label>
+                                <select class="form-control" [(ngModel)]="selectedCountry"
+                                        (change)="countryOptionsChanged()" name="country" id="country">
+                                    <option *ngFor="let c of countries" [value]="c | json">{{c.countryName}}
+                                    </option>
+                                </select>
                             </div>
-
-                        </div>
+                            <div class="form-group" *ngIf="provinceSelectionEnabled">
+                                <label for="province" class="control-label">Province</label>
+                                <select class="form-control" [(ngModel)]="selectedProvince"
+                                        (change)="provinceOptionsChanged()" name="province" id="province">
+                                    <option *ngFor="let c of provinces" [value]="c | json">
+                                        {{c.provinceName}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group" *ngIf="citySelectionEnabled">
+                                <label for="city" class="control-label">Region</label>
+                                <select class="form-control" [(ngModel)]="selectedCity"
+                                        (change)="cityOptionsChanged()"
+                                        name="city" id="city">
+                                    <option *ngFor="let c of cities" [value]="c | json">{{c.cityName}}
+                                    </option>
+                                </select>
+                            </div>
+                        </form>
                     </div>
+                </div>
+                <div class="col-md-2 pull-right ">
+                    <div class="input-group-btn text-center">
+                        <button class="btn btn-primary" name="search"
+                                (click)="searchListings()" id="search">
+                            Search
+                        </button>
+                        <button class="btn btn-default" name="clear"
+                                (click)="clearSearchFilters()" id="clear">
+                            Clear
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>
