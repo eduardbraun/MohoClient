@@ -19,7 +19,9 @@ export class ViewListingComponent implements OnInit {
     constructor(private route: ActivatedRoute, private authGuard: AuthGuard, private listingService: ListingService, public dialog: MdDialog, private alertService: AlertService){
         this.route.params.subscribe( params =>{
             console.log(params);
-            this.getListingForId(params['id'])
+            this.getListingForId(params['id']);
+            this.listingId = params['id'];
+
         });
     }
 
@@ -30,7 +32,9 @@ export class ViewListingComponent implements OnInit {
     listingDate : any;
     updatedListingDate : any;
     errorMessage: string;
+    email : any = {};
 
+    listingId : string;
 
     ngOnInit() {
 
@@ -51,6 +55,33 @@ export class ViewListingComponent implements OnInit {
                     this.listingDate = dt.getFullYear() + "/" + dt.getMonth() + "/" + dt.getDay();
                     var dt2 = new Date(Date.parse(this.list.lastUpdatedDate));
                     this.updatedListingDate = dt2.getFullYear() + "/" + dt2.getMonth() + "/" + dt2.getDay();
+                }
+            )
+    }
+
+    sendEmailToFreeLancer(){
+        if(this.email.message == null || this.email.message == ""){
+            this.alertService.warn("Please enter a Message!")
+            return;
+        }
+        if(this.email.fromEmail == null || this.email.fromEmail == ""){
+            this.alertService.warn("Please enter a valid email!")
+            return;
+        }
+
+        this.email.listingId = this.listingId;
+        this.email.freeLancerUserId = this.profile.userId;
+
+        this.busy = this.listingService.sendEmailToFreelancer(this.email)
+            .subscribe(
+                response => console.log("response", response) ,
+                error => this.alertService.error(error._body),
+                ()=>{
+                   this.alertService.success("Your Email has been send.");
+                   this.email.message = "";
+                   this.email.fromEmail = "";
+                   this.email.listingId = "";
+                   this.email.freeLancerUserId = "";
                 }
             )
     }

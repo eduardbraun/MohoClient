@@ -23,6 +23,7 @@ export class ListingService {
     private deleteListingUrl = this.baseUrl+'/api/listing/deletelisting';
     private searchListingUrl = this.baseUrl+'/api/listing/searchlistings';
     private getListingForIdUrl = this.baseUrl+'/api/browse/id=';
+    private sendEmailToFreelancerUrl = this.baseUrl+'/api/listing/ContactSeller';
 
     constructor(private http: Http) { }
 
@@ -41,7 +42,6 @@ export class ListingService {
     getFilterOptions (): Observable<any[]> {
         return this.http.get(this.getFilterOptionsUrl).map(this.parseData).catch(this.handleError);
     }
-
     disableListing(listing : any):  Observable<any[]>{
         let userInfo: any = this.getToken();
         let token = userInfo.token;
@@ -53,7 +53,17 @@ export class ListingService {
 
         return this.http.post(this.disableListingUrl, listing, options).catch(this.handleError);
     }
+    sendEmailToFreelancer(email : any):  Observable<any[]>{
+        let userInfo: any = this.getToken();
+        let token = userInfo.token;
+        let headers = new Headers();
+        headers.append("Authorization",'Bearer ' + token);
+        headers.append("Content-Type","application/json");
+        let options = new RequestOptions({ headers: headers });
+        let body :any;
 
+        return this.http.post(this.sendEmailToFreelancerUrl, email, options).catch(this.handleError);
+    }
     deleteListing(listing : any):  Observable<any[]>{
         let userInfo: any = this.getToken();
         let token = userInfo.token;

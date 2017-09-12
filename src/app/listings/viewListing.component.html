@@ -50,14 +50,14 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <label><small>Contact Freelancer</small></label>
-                        <input class="form-control" placeholder="Your Email">
+                        <input class="form-control" type="email" placeholder="Your Email" [(ngModel)]="email.fromEmail">
                         <div class="help-block">Email is Required</div>
                         <textarea class="form-control animated" cols="50" id="new-review"
                                   name="comment" placeholder="Your Message"
-                                  rows="5"></textarea>
+                                  rows="5" [(ngModel)]="email.message"></textarea>
                         <div class="text-right">
                             <button class="btn btn-success btn-lg" type="submit"
-                                    (click)="saveReview()">Send
+                                    (click)="sendEmailToFreeLancer()">Send
                             </button>
                         </div>
                     </div>
