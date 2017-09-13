@@ -4,7 +4,8 @@
         <div class="panel panel-primary filterable clearfix">
             <div class="panel-heading">
                 <div class="pull-right">
-                    <button class="btn btn-primary btn-xs" (click)="onClickAddListing()"><span class=" fa fa-plus"> Add Listing</span> </button>
+                    <button class="btn btn-primary btn-xs" (click)="onClickAddListing()"><span class=" fa fa-plus"> Add Listing</span>
+                    </button>
                     <button class="btn btn-primary btn-xs btn-filter" (click)="toggleFilter()"><span
                             class="glyphicon glyphicon-filter"></span> Filter
                     </button>
@@ -12,50 +13,45 @@
                 <h4 class="panel-title">All Listings</h4>
             </div>
         </div>
-        <div class="filters" *ngIf="toggleFilterEnabled">
+        <div class="filters" *ngIf="toggleFilterEnabled" style="padding: 8px">
             <div class="row">
-                <div class="col-md-10 ">
+                <div class="col-md-10">
                     <div class="row">
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <label for="listingTypes" class="control-label" style="padding-left: 15px;">
-                                    Catagory</label>
-                                <select class="form-control" [(ngModel)]="selectedListing"
-                                        (change)="catagoryOptionsChanged()" name="listingTypes"
-                                        id="listingTypes">
-                                    <option *ngFor="let c of listings;let i = index" [selected]="i == 0"
-                                            [value]="c | json">
-                                        {{c.listingFilterName}}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="country" class="control-label">Country</label>
-                                <select class="form-control" [(ngModel)]="selectedCountry"
-                                        (change)="countryOptionsChanged()" name="country" id="country">
-                                    <option *ngFor="let c of countries" [value]="c | json">{{c.countryName}}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="form-group" *ngIf="provinceSelectionEnabled">
-                                <label for="province" class="control-label">Province</label>
-                                <select class="form-control" [(ngModel)]="selectedProvince"
-                                        (change)="provinceOptionsChanged()" name="province" id="province">
-                                    <option *ngFor="let c of provinces" [value]="c | json">
-                                        {{c.provinceName}}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="form-group" *ngIf="citySelectionEnabled">
-                                <label for="city" class="control-label">Region</label>
-                                <select class="form-control" [(ngModel)]="selectedCity"
-                                        (change)="cityOptionsChanged()"
-                                        name="city" id="city">
-                                    <option *ngFor="let c of cities" [value]="c | json">{{c.cityName}}
-                                    </option>
-                                </select>
-                            </div>
-                        </form>
+                        <div class="col-md-3">
+                            <md-select placeholder="Catagory" [(ngModel)]="selectedListing" name="listing"
+                                       (ngModelChange)="catagoryOptionsChanged()">
+                                <md-option *ngFor="let c of listings" [value]="c | json">
+                                    {{c.listingFilterName}}
+                                </md-option>
+                            </md-select>
+                        </div>
+                        <div  class="col-md-3">
+                            <md-select placeholder="Country" [(ngModel)]="selectedCountry" name="country"
+                                       (ngModelChange)="countryOptionsChanged()">
+                                <md-option *ngFor="let c of countries" [value]="c | json">
+                                    {{c.countryName}}
+                                </md-option>
+                            </md-select>
+                        </div>
+
+                        <div *ngIf="provinceSelectionEnabled"  class="col-md-3">
+                            <md-select placeholder="Province"
+                                       [(ngModel)]="selectedProvince" name="province"
+                                       (ngModelChange)="provinceOptionsChanged()">
+                                <md-option *ngFor="let c of provinces" [value]="c | json">
+                                    {{c.provinceName}}
+                                </md-option>
+                            </md-select>
+                        </div>
+                        <div *ngIf="citySelectionEnabled"  class="col-md-3">
+                            <md-select placeholder="City" [(ngModel)]="selectedCity"
+                                       (ngModelChange)="cityOptionsChanged()"
+                                       name="city">
+                                <md-option *ngFor="let c of cities" [value]="c | json">
+                                    {{c.cityName}}
+                                </md-option>
+                            </md-select>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-2 pull-right ">
@@ -76,30 +72,31 @@
         <div *ngFor="let list of lists; let i = index">
             <div style="padding: 8px">
                 <a [routerLink]="['./../listing', list.userListingId]">
-                <md-card >
-                    <md-card-header>
-                        <div md-card-avatar class="example-header-image">
+                    <md-card>
+                        <md-card-header>
+                            <div md-card-avatar class="example-header-image">
 
-                        </div>
-                        <md-card-title>{{list.listingTitle}}</md-card-title>
-                        <md-card-subtitle>{{list.listingType}}
-                        </md-card-subtitle>
-                    </md-card-header>
-                    <md-card-content>
-                        <p>
-                            {{list.listingDescription}}
-                        </p>
-                    </md-card-content>
-                    <md-card-footer>
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">
-                                <md-card-subtitle>{{list.country}}, {{list.province}}, {{list.city}}</md-card-subtitle>
                             </div>
-                        </div>
-                    </md-card-footer>
-                </md-card>
+                            <md-card-title>{{list.listingTitle}}</md-card-title>
+                            <md-card-subtitle>{{list.listingType}}
+                            </md-card-subtitle>
+                        </md-card-header>
+                        <md-card-content>
+                            <p>
+                                {{list.listingDescription}}
+                            </p>
+                        </md-card-content>
+                        <md-card-footer>
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">
+                                    <md-card-subtitle>{{list.country}}, {{list.province}}, {{list.city}}
+                                    </md-card-subtitle>
+                                </div>
+                            </div>
+                        </md-card-footer>
+                    </md-card>
                 </a>
             </div>
         </div>

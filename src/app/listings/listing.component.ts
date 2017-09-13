@@ -29,7 +29,7 @@ export class ListingComponent implements OnInit {
     countries: any = {};
     provinces: any = {};
     cities: any = {};
-    selectedListing: any;
+    selectedListing: any = {};
     SelectedListingViewModel: any;
     selectedCountry: any = {};
     SelectedCountryViewModel: any = {};
@@ -77,6 +77,7 @@ export class ListingComponent implements OnInit {
             this.provinceSelectionEnabled = true;
             this.citySelectionEnabled = false;
             this.cities = {};
+            console.log("coutry optons changed is fired");
             this.provinces = this.SelectedCountryViewModel.provinces;
         }
     }
